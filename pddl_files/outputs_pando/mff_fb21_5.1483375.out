@@ -1,0 +1,314 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](TOTAL-COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:  112 into depth [1][2][3][4]
+                                 111            [1][2]
+                                 110            [1][2]
+                                 109            [1][2]
+                                 108            [1][2]
+                                 107            [1][2]
+                                 106            [1][2]
+                                 105            [1][2]
+                                 104            [1][2]
+                                 103            [1][2]
+                                 102            [1][2]
+                                 101            [1][2]
+                                 100            [1][2]
+                                  99            [1][2]
+                                  98            [1][2]
+                                  97            [1][2]
+                                  96            [1][2]
+                                  95            [1][2]
+                                  94            [1][2]
+                                  93            [1][2]
+                                  92            [1][2]
+                                  91            [1][2]
+                                  90            [1][2]
+                                  89            [1][2]
+                                  88            [1][2]
+                                  87            [1][2]
+                                  86            [1][2]
+                                  85            [1][2][3][4][5][6]
+                                  84            [1][2]
+                                  83            [1][2]
+                                  82            [1][2]
+                                  81            [1][2]
+                                  80            [1][2]
+                                  79            [1][2]
+                                  78            [1][2]
+                                  77            [1][2]
+                                  76            [1][2]
+                                  75            [1][2]
+                                  74            [1][2]
+                                  73            [1][2]
+                                  72            [1][2]
+                                  71            [1][2]
+                                  70            [1][2]
+                                  69            [1][2]
+                                  68            [1][2]
+                                  67            [1][2]
+                                  66            [1][2]
+                                  65            [1][2]
+                                  64            [1][2]
+                                  63            [1][2]
+                                  62            [1][2]
+                                  61            [1][2]
+                                  60            [1][2]
+                                  59            [1][2]
+                                  58            [1][2]
+                                  57            [1]
+                                  56            [1][2][3]
+                                  55            [1]
+                                  54            [1]
+                                  53            [1]
+                                  52            [1]
+                                  51            [1]
+                                  50            [1]
+                                  49            [1]
+                                  48            [1]
+                                  47            [1]
+                                  46            [1]
+                                  45            [1]
+                                  44            [1]
+                                  43            [1]
+                                  42            [1]
+                                  41            [1]
+                                  40            [1]
+                                  39            [1]
+                                  38            [1]
+                                  37            [1]
+                                  36            [1]
+                                  35            [1]
+                                  34            [1]
+                                  33            [1]
+                                  32            [1]
+                                  31            [1]
+                                  30            [1]
+                                  29            [1]
+                                  28            [1]
+                                  27            [1]
+                                  26            [1]
+                                  25            [1]
+                                  24            [1]
+                                  23            [1]
+                                  22            [1]
+                                  21            [1]
+                                  20            [1]
+                                  19            [1]
+                                  18            [1]
+                                  17            [1]
+                                  16            [1]
+                                  15            [1]
+                                  14            [1]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 Z0
+        1: MOUNTSOILSENSOR FARMBOT
+        2: MOVE FARMBOT Z0 I2
+        3: TAKEDATABEFORE FARMBOT I2
+        4: MOVE FARMBOT I2 I1
+        5: TAKEDATABEFORE FARMBOT I1
+        6: MOVE FARMBOT I1 I0
+        7: TAKEDATABEFORE FARMBOT I0
+        8: MOVE FARMBOT I0 H2
+        9: TAKEDATABEFORE FARMBOT H2
+       10: MOVE FARMBOT H2 H1
+       11: TAKEDATABEFORE FARMBOT H1
+       12: MOVE FARMBOT H1 H0
+       13: TAKEDATABEFORE FARMBOT H0
+       14: MOVE FARMBOT H0 G2
+       15: TAKEDATABEFORE FARMBOT G2
+       16: MOVE FARMBOT G2 G1
+       17: TAKEDATABEFORE FARMBOT G1
+       18: MOVE FARMBOT G1 G0
+       19: TAKEDATABEFORE FARMBOT G0
+       20: MOVE FARMBOT G0 F2
+       21: TAKEDATABEFORE FARMBOT F2
+       22: MOVE FARMBOT F2 F1
+       23: TAKEDATABEFORE FARMBOT F1
+       24: MOVE FARMBOT F1 F0
+       25: TAKEDATABEFORE FARMBOT F0
+       26: MOVE FARMBOT F0 E2
+       27: TAKEDATABEFORE FARMBOT E2
+       28: MOVE FARMBOT E2 E1
+       29: TAKEDATABEFORE FARMBOT E1
+       30: MOVE FARMBOT E1 E0
+       31: TAKEDATABEFORE FARMBOT E0
+       32: MOVE FARMBOT E0 D2
+       33: TAKEDATABEFORE FARMBOT D2
+       34: MOVE FARMBOT D2 D1
+       35: TAKEDATABEFORE FARMBOT D1
+       36: MOVE FARMBOT D1 D0
+       37: TAKEDATABEFORE FARMBOT D0
+       38: MOVE FARMBOT D0 C2
+       39: TAKEDATABEFORE FARMBOT C2
+       40: MOVE FARMBOT C2 C1
+       41: TAKEDATABEFORE FARMBOT C1
+       42: MOVE FARMBOT C1 C0
+       43: TAKEDATABEFORE FARMBOT C0
+       44: MOVE FARMBOT C0 B2
+       45: TAKEDATABEFORE FARMBOT B2
+       46: MOVE FARMBOT B2 B1
+       47: TAKEDATABEFORE FARMBOT B1
+       48: MOVE FARMBOT B1 B0
+       49: TAKEDATABEFORE FARMBOT B0
+       50: MOVE FARMBOT B0 A2
+       51: TAKEDATABEFORE FARMBOT A2
+       52: MOVE FARMBOT A2 A1
+       53: TAKEDATABEFORE FARMBOT A1
+       54: MOVE FARMBOT A1 A0
+       55: TAKEDATABEFORE FARMBOT A0
+       56: MOVE FARMBOT A0 Z0
+       57: DISMOUNTSOILSENSOR FARMBOT
+       58: MOVE FARMBOT Z0 Z1
+       59: MOUNTWATERNOZZLE FARMBOT
+       60: MOVE FARMBOT Z1 I2
+       61: WATERSOIL FARMBOT I2
+       62: MOVE FARMBOT I2 I1
+       63: WATERSOIL FARMBOT I1
+       64: MOVE FARMBOT I1 I0
+       65: WATERSOIL FARMBOT I0
+       66: MOVE FARMBOT I0 H2
+       67: WATERSOIL FARMBOT H2
+       68: MOVE FARMBOT H2 H1
+       69: WATERSOIL FARMBOT H1
+       70: MOVE FARMBOT H1 H0
+       71: WATERSOIL FARMBOT H0
+       72: MOVE FARMBOT H0 G2
+       73: WATERSOIL FARMBOT G2
+       74: MOVE FARMBOT G2 G1
+       75: WATERSOIL FARMBOT G1
+       76: MOVE FARMBOT G1 G0
+       77: WATERSOIL FARMBOT G0
+       78: MOVE FARMBOT G0 F2
+       79: WATERSOIL FARMBOT F2
+       80: MOVE FARMBOT F2 F1
+       81: WATERSOIL FARMBOT F1
+       82: MOVE FARMBOT F1 F0
+       83: WATERSOIL FARMBOT F0
+       84: MOVE FARMBOT F0 E2
+       85: WATERSOIL FARMBOT E2
+       86: MOVE FARMBOT E2 E1
+       87: WATERSOIL FARMBOT E1
+       88: MOVE FARMBOT E1 E0
+       89: WATERSOIL FARMBOT E0
+       90: MOVE FARMBOT E0 D2
+       91: WATERSOIL FARMBOT D2
+       92: MOVE FARMBOT D2 D1
+       93: WATERSOIL FARMBOT D1
+       94: MOVE FARMBOT D1 D0
+       95: WATERSOIL FARMBOT D0
+       96: MOVE FARMBOT D0 C2
+       97: WATERSOIL FARMBOT C2
+       98: MOVE FARMBOT C2 C1
+       99: WATERSOIL FARMBOT C1
+      100: MOVE FARMBOT C1 C0
+      101: WATERSOIL FARMBOT C0
+      102: MOVE FARMBOT C0 B2
+      103: WATERSOIL FARMBOT B2
+      104: MOVE FARMBOT B2 B1
+      105: WATERSOIL FARMBOT B1
+      106: MOVE FARMBOT B1 B0
+      107: WATERSOIL FARMBOT B0
+      108: MOVE FARMBOT B0 A2
+      109: WATERSOIL FARMBOT A2
+      110: MOVE FARMBOT A2 A1
+      111: WATERSOIL FARMBOT A1
+      112: MOVE FARMBOT A1 A0
+      113: WATERSOIL FARMBOT A0
+      114: MOVE FARMBOT A0 Z1
+      115: DISMOUNTWATERNOZZLE FARMBOT
+      116: MOVE FARMBOT Z1 Z0
+      117: MOUNTSOILSENSOR FARMBOT
+      118: MOVE FARMBOT Z0 I2
+      119: TAKEDATAAFTER FARMBOT I2
+      120: MOVE FARMBOT I2 I1
+      121: TAKEDATAAFTER FARMBOT I1
+      122: MOVE FARMBOT I1 I0
+      123: TAKEDATAAFTER FARMBOT I0
+      124: MOVE FARMBOT I0 H2
+      125: TAKEDATAAFTER FARMBOT H2
+      126: MOVE FARMBOT H2 H1
+      127: TAKEDATAAFTER FARMBOT H1
+      128: MOVE FARMBOT H1 H0
+      129: TAKEDATAAFTER FARMBOT H0
+      130: MOVE FARMBOT H0 G2
+      131: TAKEDATAAFTER FARMBOT G2
+      132: MOVE FARMBOT G2 G1
+      133: TAKEDATAAFTER FARMBOT G1
+      134: MOVE FARMBOT G1 G0
+      135: TAKEDATAAFTER FARMBOT G0
+      136: MOVE FARMBOT G0 F2
+      137: TAKEDATAAFTER FARMBOT F2
+      138: MOVE FARMBOT F2 F1
+      139: TAKEDATAAFTER FARMBOT F1
+      140: MOVE FARMBOT F1 F0
+      141: TAKEDATAAFTER FARMBOT F0
+      142: MOVE FARMBOT F0 E2
+      143: TAKEDATAAFTER FARMBOT E2
+      144: MOVE FARMBOT E2 E1
+      145: TAKEDATAAFTER FARMBOT E1
+      146: MOVE FARMBOT E1 E0
+      147: TAKEDATAAFTER FARMBOT E0
+      148: MOVE FARMBOT E0 D2
+      149: TAKEDATAAFTER FARMBOT D2
+      150: MOVE FARMBOT D2 D1
+      151: TAKEDATAAFTER FARMBOT D1
+      152: MOVE FARMBOT D1 D0
+      153: TAKEDATAAFTER FARMBOT D0
+      154: MOVE FARMBOT D0 C2
+      155: TAKEDATAAFTER FARMBOT C2
+      156: MOVE FARMBOT C2 C1
+      157: TAKEDATAAFTER FARMBOT C1
+      158: MOVE FARMBOT C1 C0
+      159: TAKEDATAAFTER FARMBOT C0
+      160: MOVE FARMBOT C0 B2
+      161: TAKEDATAAFTER FARMBOT B2
+      162: MOVE FARMBOT B2 B1
+      163: TAKEDATAAFTER FARMBOT B1
+      164: MOVE FARMBOT B1 B0
+      165: TAKEDATAAFTER FARMBOT B0
+      166: MOVE FARMBOT B0 A2
+      167: TAKEDATAAFTER FARMBOT A2
+      168: MOVE FARMBOT A2 A1
+      169: TAKEDATAAFTER FARMBOT A1
+      170: MOVE FARMBOT A1 A0
+      171: TAKEDATAAFTER FARMBOT A0
+      172: MOVE FARMBOT A0 Z0
+      173: DISMOUNTSOILSENSOR FARMBOT
+      174: MOVE FARMBOT Z0 Z6
+plan cost: 109174.000000
+
+time spent:    0.00 seconds instantiating 985 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 114 facts and 984 actions
+               0.00 seconds creating final representation with 114 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.18 seconds searching, evaluating 2289 states, to a max depth of 6
+               0.18 seconds total time
+

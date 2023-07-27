@@ -1,0 +1,26 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /home/farmbot-server/anaconda3/bin/python3 /home/farmbot-server/downward/builds/release/bin/translate/translate.py domain_v11.pddl problem_v11.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.008s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 40 rules.
+Computing model... [0.010s CPU, 0.012s wall-clock]
+1922 relevant atoms
+909 auxiliary atoms
+2831 final queue length
+4349 total queue pushes
+Completing instantiation... translate exit code: 30
+
+Driver aborting after translate
+INFO     Planner time: 0.11s

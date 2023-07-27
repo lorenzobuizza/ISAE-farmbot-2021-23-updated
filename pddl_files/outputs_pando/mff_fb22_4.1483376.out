@@ -1,0 +1,498 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is A*epsilon with weight 5.
+Metric is ((1.00*[RF0](TOTAL-COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Advancing to goal distance:  124
+                             123
+                             122
+                             121
+                             120
+                             119
+                             118
+                             117
+                             116
+                             115
+                             114
+                             113
+                             112
+                             111
+                             110
+                             109
+                             108
+                             107
+                             106
+                             105
+                             104
+                             103
+                             102
+                             101
+                             100
+                              99
+                              98
+                              97
+                              96
+                              95
+                              94
+                              93
+                              92
+                              91
+                              90
+                              89
+                              88
+                              87
+                              86
+                              84
+                              83
+                              81
+                              80
+                              79
+                              77
+                              76
+                              75
+                              73
+                              72
+                              71
+                              69
+                              68
+                              67
+                              65
+                              64
+                              63
+                              62
+                              61
+                              60
+                              59
+                              57
+                              55
+                              53
+                              52
+                              51
+                              50
+                              49
+                              48
+                              47
+                              45
+                              43
+                              42
+                              40
+                              39
+                              37
+                              36
+                              34
+                              33
+                              32
+                              30
+                              28
+                              27
+                              26
+                              24
+                              23
+                              22
+                              20
+                              19
+                              18
+                              16
+                              15
+                              14
+                              12
+                              11
+                              10
+                               9
+                               8
+                               7
+                               5
+                               4
+                               2
+                               1
+                               0
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 Z0
+        1: MOUNTSOILSENSOR FARMBOT
+        2: MOVE FARMBOT Z0 A2
+        3: TAKEDATABEFORE FARMBOT A2
+        4: MOVE FARMBOT A2 A0
+        5: TAKEDATABEFORE FARMBOT A0
+        6: MOVE FARMBOT A0 B1
+        7: TAKEDATABEFORE FARMBOT B1
+        8: MOVE FARMBOT B1 A1
+        9: TAKEDATABEFORE FARMBOT A1
+       10: MOVE FARMBOT A1 J2
+       11: TAKEDATABEFORE FARMBOT J2
+       12: MOVE FARMBOT J2 Z0
+       13: DISMOUNTSOILSENSOR FARMBOT
+       14: MOVE FARMBOT Z0 Z1
+       15: MOUNTWATERNOZZLE FARMBOT
+       16: MOVE FARMBOT Z1 A1
+       17: WATERSOIL FARMBOT A1
+       18: MOVE FARMBOT A1 A2
+       19: WATERSOIL FARMBOT A2
+       20: MOVE FARMBOT A2 A0
+       21: WATERSOIL FARMBOT A0
+       22: MOVE FARMBOT A0 Z1
+       23: DISMOUNTWATERNOZZLE FARMBOT
+       24: MOVE FARMBOT Z1 Z0
+       25: MOUNTSOILSENSOR FARMBOT
+       26: MOVE FARMBOT Z0 A1
+       27: TAKEDATAAFTER FARMBOT A1
+       28: MOVE FARMBOT A1 B0
+       29: TAKEDATABEFORE FARMBOT B0
+       30: MOVE FARMBOT B0 A0
+       31: TAKEDATAAFTER FARMBOT A0
+       32: MOVE FARMBOT A0 F0
+       33: TAKEDATABEFORE FARMBOT F0
+       34: MOVE FARMBOT F0 J0
+       35: TAKEDATABEFORE FARMBOT J0
+       36: MOVE FARMBOT J0 H0
+       37: TAKEDATABEFORE FARMBOT H0
+       38: MOVE FARMBOT H0 G0
+       39: TAKEDATABEFORE FARMBOT G0
+       40: MOVE FARMBOT G0 I0
+       41: TAKEDATABEFORE FARMBOT I0
+       42: MOVE FARMBOT I0 Z0
+       43: DISMOUNTSOILSENSOR FARMBOT
+       44: MOVE FARMBOT Z0 Z1
+       45: MOUNTWATERNOZZLE FARMBOT
+       46: MOVE FARMBOT Z1 J0
+       47: WATERSOIL FARMBOT J0
+       48: MOVE FARMBOT J0 J2
+       49: WATERSOIL FARMBOT J2
+       50: MOVE FARMBOT J2 Z1
+       51: DISMOUNTWATERNOZZLE FARMBOT
+       52: MOVE FARMBOT Z1 Z0
+       53: MOUNTSOILSENSOR FARMBOT
+       54: MOVE FARMBOT Z0 J2
+       55: TAKEDATAAFTER FARMBOT J2
+       56: MOVE FARMBOT J2 J0
+       57: TAKEDATAAFTER FARMBOT J0
+       58: MOVE FARMBOT J0 Z0
+       59: DISMOUNTSOILSENSOR FARMBOT
+       60: MOVE FARMBOT Z0 Z1
+       61: MOUNTWATERNOZZLE FARMBOT
+       62: MOVE FARMBOT Z1 I0
+       63: WATERSOIL FARMBOT I0
+       64: MOVE FARMBOT I0 G0
+       65: WATERSOIL FARMBOT G0
+       66: MOVE FARMBOT G0 H0
+       67: WATERSOIL FARMBOT H0
+       68: MOVE FARMBOT H0 Z1
+       69: DISMOUNTWATERNOZZLE FARMBOT
+       70: MOVE FARMBOT Z1 Z0
+       71: MOUNTSOILSENSOR FARMBOT
+       72: MOVE FARMBOT Z0 I0
+       73: TAKEDATAAFTER FARMBOT I0
+       74: MOVE FARMBOT I0 H0
+       75: TAKEDATAAFTER FARMBOT H0
+       76: MOVE FARMBOT H0 G0
+       77: TAKEDATAAFTER FARMBOT G0
+       78: MOVE FARMBOT G0 Z0
+       79: DISMOUNTSOILSENSOR FARMBOT
+       80: MOVE FARMBOT Z0 Z1
+       81: MOUNTWATERNOZZLE FARMBOT
+       82: MOVE FARMBOT Z1 F0
+       83: WATERSOIL FARMBOT F0
+       84: MOVE FARMBOT F0 Z1
+       85: DISMOUNTWATERNOZZLE FARMBOT
+       86: MOVE FARMBOT Z1 Z0
+       87: MOUNTSOILSENSOR FARMBOT
+       88: MOVE FARMBOT Z0 F0
+       89: TAKEDATAAFTER FARMBOT F0
+       90: MOVE FARMBOT F0 J1
+       91: TAKEDATABEFORE FARMBOT J1
+       92: MOVE FARMBOT J1 Z0
+       93: DISMOUNTSOILSENSOR FARMBOT
+       94: MOVE FARMBOT Z0 Z1
+       95: MOUNTWATERNOZZLE FARMBOT
+       96: MOVE FARMBOT Z1 J1
+       97: WATERSOIL FARMBOT J1
+       98: MOVE FARMBOT J1 Z1
+       99: DISMOUNTWATERNOZZLE FARMBOT
+      100: MOVE FARMBOT Z1 Z0
+      101: MOUNTSOILSENSOR FARMBOT
+      102: MOVE FARMBOT Z0 J1
+      103: TAKEDATAAFTER FARMBOT J1
+      104: MOVE FARMBOT J1 Z0
+      105: DISMOUNTSOILSENSOR FARMBOT
+      106: MOVE FARMBOT Z0 Z1
+      107: MOUNTWATERNOZZLE FARMBOT
+      108: MOVE FARMBOT Z1 B0
+      109: WATERSOIL FARMBOT B0
+      110: MOVE FARMBOT B0 Z1
+      111: DISMOUNTWATERNOZZLE FARMBOT
+      112: MOVE FARMBOT Z1 Z0
+      113: MOUNTSOILSENSOR FARMBOT
+      114: MOVE FARMBOT Z0 B0
+      115: TAKEDATAAFTER FARMBOT B0
+      116: MOVE FARMBOT B0 I2
+      117: TAKEDATABEFORE FARMBOT I2
+      118: MOVE FARMBOT I2 Z0
+      119: DISMOUNTSOILSENSOR FARMBOT
+      120: MOVE FARMBOT Z0 Z1
+      121: MOUNTWATERNOZZLE FARMBOT
+      122: MOVE FARMBOT Z1 I2
+      123: WATERSOIL FARMBOT I2
+      124: MOVE FARMBOT I2 Z1
+      125: DISMOUNTWATERNOZZLE FARMBOT
+      126: MOVE FARMBOT Z1 Z0
+      127: MOUNTSOILSENSOR FARMBOT
+      128: MOVE FARMBOT Z0 I2
+      129: TAKEDATAAFTER FARMBOT I2
+      130: MOVE FARMBOT I2 H2
+      131: TAKEDATABEFORE FARMBOT H2
+      132: MOVE FARMBOT H2 Z0
+      133: DISMOUNTSOILSENSOR FARMBOT
+      134: MOVE FARMBOT Z0 Z1
+      135: MOUNTWATERNOZZLE FARMBOT
+      136: MOVE FARMBOT Z1 H2
+      137: WATERSOIL FARMBOT H2
+      138: MOVE FARMBOT H2 Z1
+      139: DISMOUNTWATERNOZZLE FARMBOT
+      140: MOVE FARMBOT Z1 Z0
+      141: MOUNTSOILSENSOR FARMBOT
+      142: MOVE FARMBOT Z0 H2
+      143: TAKEDATAAFTER FARMBOT H2
+      144: MOVE FARMBOT H2 H1
+      145: TAKEDATABEFORE FARMBOT H1
+      146: MOVE FARMBOT H1 Z0
+      147: DISMOUNTSOILSENSOR FARMBOT
+      148: MOVE FARMBOT Z0 Z1
+      149: MOUNTWATERNOZZLE FARMBOT
+      150: MOVE FARMBOT Z1 H1
+      151: WATERSOIL FARMBOT H1
+      152: MOVE FARMBOT H1 Z1
+      153: DISMOUNTWATERNOZZLE FARMBOT
+      154: MOVE FARMBOT Z1 Z0
+      155: MOUNTSOILSENSOR FARMBOT
+      156: MOVE FARMBOT Z0 H1
+      157: TAKEDATAAFTER FARMBOT H1
+      158: MOVE FARMBOT H1 G1
+      159: TAKEDATABEFORE FARMBOT G1
+      160: MOVE FARMBOT G1 Z0
+      161: DISMOUNTSOILSENSOR FARMBOT
+      162: MOVE FARMBOT Z0 Z1
+      163: MOUNTWATERNOZZLE FARMBOT
+      164: MOVE FARMBOT Z1 G1
+      165: WATERSOIL FARMBOT G1
+      166: MOVE FARMBOT G1 Z1
+      167: DISMOUNTWATERNOZZLE FARMBOT
+      168: MOVE FARMBOT Z1 Z0
+      169: MOUNTSOILSENSOR FARMBOT
+      170: MOVE FARMBOT Z0 G1
+      171: TAKEDATAAFTER FARMBOT G1
+      172: MOVE FARMBOT G1 F2
+      173: TAKEDATABEFORE FARMBOT F2
+      174: MOVE FARMBOT F2 Z0
+      175: DISMOUNTSOILSENSOR FARMBOT
+      176: MOVE FARMBOT Z0 Z1
+      177: MOUNTWATERNOZZLE FARMBOT
+      178: MOVE FARMBOT Z1 F2
+      179: WATERSOIL FARMBOT F2
+      180: MOVE FARMBOT F2 Z1
+      181: DISMOUNTWATERNOZZLE FARMBOT
+      182: MOVE FARMBOT Z1 Z0
+      183: MOUNTSOILSENSOR FARMBOT
+      184: MOVE FARMBOT Z0 G2
+      185: TAKEDATABEFORE FARMBOT G2
+      186: MOVE FARMBOT G2 Z0
+      187: DISMOUNTSOILSENSOR FARMBOT
+      188: MOVE FARMBOT Z0 Z1
+      189: MOUNTWATERNOZZLE FARMBOT
+      190: MOVE FARMBOT Z1 G2
+      191: WATERSOIL FARMBOT G2
+      192: MOVE FARMBOT G2 Z1
+      193: DISMOUNTWATERNOZZLE FARMBOT
+      194: MOVE FARMBOT Z1 Z0
+      195: MOUNTSOILSENSOR FARMBOT
+      196: MOVE FARMBOT Z0 F1
+      197: TAKEDATABEFORE FARMBOT F1
+      198: MOVE FARMBOT F1 Z0
+      199: DISMOUNTSOILSENSOR FARMBOT
+      200: MOVE FARMBOT Z0 Z1
+      201: MOUNTWATERNOZZLE FARMBOT
+      202: MOVE FARMBOT Z1 F1
+      203: WATERSOIL FARMBOT F1
+      204: MOVE FARMBOT F1 Z1
+      205: DISMOUNTWATERNOZZLE FARMBOT
+      206: MOVE FARMBOT Z1 Z0
+      207: MOUNTSOILSENSOR FARMBOT
+      208: MOVE FARMBOT Z0 G2
+      209: TAKEDATAAFTER FARMBOT G2
+      210: MOVE FARMBOT G2 F1
+      211: TAKEDATAAFTER FARMBOT F1
+      212: MOVE FARMBOT F1 F2
+      213: TAKEDATAAFTER FARMBOT F2
+      214: MOVE FARMBOT F2 D2
+      215: TAKEDATABEFORE FARMBOT D2
+      216: MOVE FARMBOT D2 Z0
+      217: DISMOUNTSOILSENSOR FARMBOT
+      218: MOVE FARMBOT Z0 Z1
+      219: MOUNTWATERNOZZLE FARMBOT
+      220: MOVE FARMBOT Z1 D2
+      221: WATERSOIL FARMBOT D2
+      222: MOVE FARMBOT D2 Z1
+      223: DISMOUNTWATERNOZZLE FARMBOT
+      224: MOVE FARMBOT Z1 Z0
+      225: MOUNTSOILSENSOR FARMBOT
+      226: MOVE FARMBOT Z0 E1
+      227: TAKEDATABEFORE FARMBOT E1
+      228: MOVE FARMBOT E1 Z0
+      229: DISMOUNTSOILSENSOR FARMBOT
+      230: MOVE FARMBOT Z0 Z1
+      231: MOUNTWATERNOZZLE FARMBOT
+      232: MOVE FARMBOT Z1 E1
+      233: WATERSOIL FARMBOT E1
+      234: MOVE FARMBOT E1 Z1
+      235: DISMOUNTWATERNOZZLE FARMBOT
+      236: MOVE FARMBOT Z1 Z0
+      237: MOUNTSOILSENSOR FARMBOT
+      238: MOVE FARMBOT Z0 E2
+      239: TAKEDATABEFORE FARMBOT E2
+      240: MOVE FARMBOT E2 Z0
+      241: DISMOUNTSOILSENSOR FARMBOT
+      242: MOVE FARMBOT Z0 Z1
+      243: MOUNTWATERNOZZLE FARMBOT
+      244: MOVE FARMBOT Z1 E2
+      245: WATERSOIL FARMBOT E2
+      246: MOVE FARMBOT E2 Z1
+      247: DISMOUNTWATERNOZZLE FARMBOT
+      248: MOVE FARMBOT Z1 Z0
+      249: MOUNTSOILSENSOR FARMBOT
+      250: MOVE FARMBOT Z0 E1
+      251: TAKEDATAAFTER FARMBOT E1
+      252: MOVE FARMBOT E1 D2
+      253: TAKEDATAAFTER FARMBOT D2
+      254: MOVE FARMBOT D2 Z0
+      255: DISMOUNTSOILSENSOR FARMBOT
+      256: MOVE FARMBOT Z0 Z1
+      257: MOUNTWATERNOZZLE FARMBOT
+      258: MOVE FARMBOT Z1 B1
+      259: WATERSOIL FARMBOT B1
+      260: MOVE FARMBOT B1 Z1
+      261: DISMOUNTWATERNOZZLE FARMBOT
+      262: MOVE FARMBOT Z1 Z0
+      263: MOUNTSOILSENSOR FARMBOT
+      264: MOVE FARMBOT Z0 A2
+      265: TAKEDATAAFTER FARMBOT A2
+      266: MOVE FARMBOT A2 D1
+      267: TAKEDATABEFORE FARMBOT D1
+      268: MOVE FARMBOT D1 B1
+      269: TAKEDATAAFTER FARMBOT B1
+      270: MOVE FARMBOT B1 Z0
+      271: DISMOUNTSOILSENSOR FARMBOT
+      272: MOVE FARMBOT Z0 Z1
+      273: MOUNTWATERNOZZLE FARMBOT
+      274: MOVE FARMBOT Z1 D1
+      275: WATERSOIL FARMBOT D1
+      276: MOVE FARMBOT D1 Z1
+      277: DISMOUNTWATERNOZZLE FARMBOT
+      278: MOVE FARMBOT Z1 Z0
+      279: MOUNTSOILSENSOR FARMBOT
+      280: MOVE FARMBOT Z0 D1
+      281: TAKEDATAAFTER FARMBOT D1
+      282: MOVE FARMBOT D1 I1
+      283: TAKEDATABEFORE FARMBOT I1
+      284: MOVE FARMBOT I1 Z0
+      285: DISMOUNTSOILSENSOR FARMBOT
+      286: MOVE FARMBOT Z0 Z1
+      287: MOUNTWATERNOZZLE FARMBOT
+      288: MOVE FARMBOT Z1 I1
+      289: WATERSOIL FARMBOT I1
+      290: MOVE FARMBOT I1 Z1
+      291: DISMOUNTWATERNOZZLE FARMBOT
+      292: MOVE FARMBOT Z1 Z0
+      293: MOUNTSOILSENSOR FARMBOT
+      294: MOVE FARMBOT Z0 I1
+      295: TAKEDATAAFTER FARMBOT I1
+      296: MOVE FARMBOT I1 E2
+      297: TAKEDATAAFTER FARMBOT E2
+      298: MOVE FARMBOT E2 E0
+      299: TAKEDATABEFORE FARMBOT E0
+      300: MOVE FARMBOT E0 Z0
+      301: DISMOUNTSOILSENSOR FARMBOT
+      302: MOVE FARMBOT Z0 Z1
+      303: MOUNTWATERNOZZLE FARMBOT
+      304: MOVE FARMBOT Z1 E0
+      305: WATERSOIL FARMBOT E0
+      306: MOVE FARMBOT E0 Z1
+      307: DISMOUNTWATERNOZZLE FARMBOT
+      308: MOVE FARMBOT Z1 Z0
+      309: MOUNTSOILSENSOR FARMBOT
+      310: MOVE FARMBOT Z0 E0
+      311: TAKEDATAAFTER FARMBOT E0
+      312: MOVE FARMBOT E0 C1
+      313: TAKEDATABEFORE FARMBOT C1
+      314: MOVE FARMBOT C1 Z0
+      315: DISMOUNTSOILSENSOR FARMBOT
+      316: MOVE FARMBOT Z0 Z1
+      317: MOUNTWATERNOZZLE FARMBOT
+      318: MOVE FARMBOT Z1 C1
+      319: WATERSOIL FARMBOT C1
+      320: MOVE FARMBOT C1 Z1
+      321: DISMOUNTWATERNOZZLE FARMBOT
+      322: MOVE FARMBOT Z1 Z0
+      323: MOUNTSOILSENSOR FARMBOT
+      324: MOVE FARMBOT Z0 C1
+      325: TAKEDATAAFTER FARMBOT C1
+      326: MOVE FARMBOT C1 D0
+      327: TAKEDATABEFORE FARMBOT D0
+      328: MOVE FARMBOT D0 Z0
+      329: DISMOUNTSOILSENSOR FARMBOT
+      330: MOVE FARMBOT Z0 Z1
+      331: MOUNTWATERNOZZLE FARMBOT
+      332: MOVE FARMBOT Z1 D0
+      333: WATERSOIL FARMBOT D0
+      334: MOVE FARMBOT D0 Z1
+      335: DISMOUNTWATERNOZZLE FARMBOT
+      336: MOVE FARMBOT Z1 Z0
+      337: MOUNTSOILSENSOR FARMBOT
+      338: MOVE FARMBOT Z0 D0
+      339: TAKEDATAAFTER FARMBOT D0
+      340: MOVE FARMBOT D0 B2
+      341: TAKEDATABEFORE FARMBOT B2
+      342: MOVE FARMBOT B2 C2
+      343: TAKEDATABEFORE FARMBOT C2
+      344: MOVE FARMBOT C2 C0
+      345: TAKEDATABEFORE FARMBOT C0
+      346: MOVE FARMBOT C0 Z0
+      347: DISMOUNTSOILSENSOR FARMBOT
+      348: MOVE FARMBOT Z0 Z1
+      349: MOUNTWATERNOZZLE FARMBOT
+      350: MOVE FARMBOT Z1 B2
+      351: WATERSOIL FARMBOT B2
+      352: MOVE FARMBOT B2 C2
+      353: WATERSOIL FARMBOT C2
+      354: MOVE FARMBOT C2 C0
+      355: WATERSOIL FARMBOT C0
+      356: MOVE FARMBOT C0 Z1
+      357: DISMOUNTWATERNOZZLE FARMBOT
+      358: MOVE FARMBOT Z1 Z0
+      359: MOUNTSOILSENSOR FARMBOT
+      360: MOVE FARMBOT Z0 B2
+      361: TAKEDATAAFTER FARMBOT B2
+      362: MOVE FARMBOT B2 C2
+      363: TAKEDATAAFTER FARMBOT C2
+      364: MOVE FARMBOT C2 C0
+      365: TAKEDATAAFTER FARMBOT C0
+      366: MOVE FARMBOT C0 Z0
+      367: DISMOUNTSOILSENSOR FARMBOT
+      368: MOVE FARMBOT Z0 Z6
+plan cost: 468266.000000
+
+time spent:    0.00 seconds instantiating 1183 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 126 facts and 1182 actions
+               0.00 seconds creating final representation with 126 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               4.31 seconds searching, evaluating 13032 states, to a max depth of 0
+               4.31 seconds total time
+

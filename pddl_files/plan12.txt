@@ -1,0 +1,188 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /home/farmbot-server/anaconda3/bin/python3 /home/farmbot-server/downward/builds/release/bin/translate/translate.py domain_v12.pddl problem_v12.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.009s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 38 rules.
+Computing model... [0.010s CPU, 0.008s wall-clock]
+1683 relevant atoms
+284 auxiliary atoms
+1967 final queue length
+3268 total queue pushes
+Completing instantiation... [0.020s CPU, 0.019s wall-clock]
+Instantiating: [0.030s CPU, 0.030s wall-clock]
+Computing fact groups...
+Finding invariants...
+18 initial candidates
+Finding invariants: [0.000s CPU, 0.002s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+100 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.003s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.020s CPU, 0.018s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+2 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.010s wall-clock]
+Reordering and filtering variables...
+102 of 102 variables necessary.
+0 of 3 mutex groups necessary.
+1363 of 1363 operators necessary.
+34 of 34 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.003s wall-clock]
+Translator variables: 102
+Translator derived variables: 1
+Translator facts: 239
+Translator goal facts: 3
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 1363
+Translator axioms: 34
+Translator task size: 4702
+Translator peak memory: 44220 KB
+Writing output... [0.010s CPU, 0.006s wall-clock]
+Done! [0.080s CPU, 0.080s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/farmbot-server/downward/builds/release/bin/downward --search 'astar(add(verbosity=normal, transform=no_transform(), cache_estimates=true))' --internal-plan-file sas_plan < output.sas
+[t=3.0053e-05s, 10148 KB] reading input...
+[t=0.00308185s, 10448 KB] done reading input!
+[t=0.00410357s, 10844 KB] Simplifying 1397 unary operators... done! [1397 unary operators]
+[t=0.0045032s, 10976 KB] time to simplify: 0.000448056s
+[t=0.00458058s, 10976 KB] Initializing additive heuristic...
+[t=0.00463962s, 10976 KB] Building successor generator...done!
+[t=0.00484077s, 10976 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.00485775s, 10976 KB] time for successor generation creation: 0.00013614s
+[t=0.00487729s, 10976 KB] Variables: 102
+[t=0.00489405s, 10976 KB] FactPairs: 239
+[t=0.00490995s, 10976 KB] Bytes per state: 16
+[t=0.00497129s, 10976 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.00505156s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 599433
+[t=0.00508069s, 10976 KB] g=0, 1 evaluated, 0 expanded
+[t=0.00509933s, 10976 KB] f = 599433, 1 evaluated, 0 expanded
+[t=0.00511799s, 10976 KB] Initial heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 599433
+[t=0.00513485s, 10976 KB] pruning method: none
+[t=0.0051823s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 494203
+[t=0.00520307s, 10976 KB] g=1096, 2 evaluated, 1 expanded
+[t=0.00524516s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 465568
+[t=0.00526473s, 10976 KB] g=1312, 3 evaluated, 1 expanded
+[t=0.00530596s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 458374
+[t=0.00532501s, 10976 KB] g=1600, 4 evaluated, 1 expanded
+[t=0.00604988s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 456704
+[t=0.00607549s, 10976 KB] g=1361, 35 evaluated, 1 expanded
+[t=0.00616955s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 424704
+[t=0.00619087s, 10976 KB] g=2361, 37 evaluated, 2 expanded
+[t=0.00623383s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 419099
+[t=0.00625365s, 10976 KB] g=3708, 38 evaluated, 3 expanded
+[t=0.00629463s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 397856
+[t=0.00631387s, 10976 KB] g=3477, 39 evaluated, 3 expanded
+[t=0.00635497s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 394438
+[t=0.00637383s, 10976 KB] g=3359, 40 evaluated, 3 expanded
+[t=0.00643759s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 390850
+[t=0.00645717s, 10976 KB] g=3844, 42 evaluated, 3 expanded
+[t=0.00649772s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 390534
+[t=0.0065169s, 10976 KB] g=3757, 43 evaluated, 3 expanded
+[t=0.00721678s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 390034
+[t=0.0072409s, 10976 KB] g=4257, 73 evaluated, 4 expanded
+[t=0.00737354s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 389950
+[t=0.0073957s, 10976 KB] g=4657, 78 evaluated, 5 expanded
+[t=0.0081085s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 389450
+[t=0.00813261s, 10976 KB] g=5157, 109 evaluated, 6 expanded
+[t=0.00826447s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 389134
+[t=0.0082867s, 10976 KB] g=5557, 114 evaluated, 7 expanded
+[t=0.0100547s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 388550
+[t=0.0100808s, 10976 KB] g=6457, 186 evaluated, 14 expanded, 1 reopened
+[t=0.0101236s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 388069
+[t=0.010144s, 10976 KB] g=6622, 187 evaluated, 14 expanded, 1 reopened
+[t=0.0138241s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 387485
+[t=0.0138518s, 10976 KB] g=7522, 330 evaluated, 34 expanded, 5 reopened
+[t=0.0139056s, 10976 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 387169
+[t=0.0139356s, 10976 KB] g=7357, 331 evaluated, 34 expanded, 5 reopened
+[t=0.019502s, 11112 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 386420
+[t=0.0195335s, 11112 KB] g=8509, 545 evaluated, 71 expanded, 12 reopened
+[t=0.01958s, 11112 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 386269
+[t=0.0196037s, 11112 KB] g=8344, 546 evaluated, 71 expanded, 12 reopened
+[t=0.0375603s, 11652 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 385520
+[t=0.0375925s, 11652 KB] g=8759, 1193 evaluated, 214 expanded, 49 reopened
+[t=0.0376349s, 11652 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 385204
+[t=0.0376552s, 11652 KB] g=8924, 1194 evaluated, 214 expanded, 49 reopened
+[t=0.0497669s, 12048 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 384220
+[t=0.0497975s, 12048 KB] g=10553, 1626 evaluated, 314 expanded, 65 reopened
+[t=0.0498397s, 12048 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 383810
+[t=0.0498604s, 12048 KB] g=10647, 1627 evaluated, 314 expanded, 65 reopened
+[t=0.136929s, 14732 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 382826
+[t=0.136978s, 14732 KB] g=11053, 4254 evaluated, 1369 expanded, 556 reopened
+[t=0.137043s, 14732 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 382510
+[t=0.137064s, 14732 KB] g=10959, 4255 evaluated, 1369 expanded, 556 reopened
+[t=0.312122s, 18824 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 381761
+[t=0.312203s, 18824 KB] g=11624, 9258 evaluated, 3675 expanded, 1622 reopened
+[t=0.312272s, 18824 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 381116
+[t=0.312294s, 18824 KB] g=11953, 9259 evaluated, 3675 expanded, 1622 reopened
+[t=0.338845s, 19484 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 380861
+[t=0.338884s, 19484 KB] g=12359, 10049 evaluated, 3993 expanded, 1720 reopened
+[t=0.33893s, 19484 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 379816
+[t=0.338952s, 19484 KB] g=12759, 10050 evaluated, 3993 expanded, 1720 reopened
+[t=1.23704s, 48668 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 379742
+[t=1.23713s, 48668 KB] g=14626, 32836 evaluated, 17273 expanded, 8284 reopened
+[t=1.23723s, 48668 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 379161
+[t=1.23727s, 48668 KB] g=14177, 32838 evaluated, 17273 expanded, 8284 reopened
+[t=1.23735s, 48668 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 378052
+[t=1.23737s, 48668 KB] g=14241, 32839 evaluated, 17273 expanded, 8284 reopened
+[t=1.56207s, 59100 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 377800
+[t=1.56215s, 59100 KB] g=15484, 39425 evaluated, 23259 expanded, 12175 reopened
+[t=1.56225s, 59100 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 377767
+[t=1.56228s, 59100 KB] g=14936, 39427 evaluated, 23259 expanded, 12175 reopened
+[t=1.56234s, 59100 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 376422
+[t=1.56236s, 59100 KB] g=15173, 39428 evaluated, 23259 expanded, 12175 reopened
+[t=1.89032s, 64912 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 375700
+[t=1.8904s, 64912 KB] g=16426, 47539 evaluated, 28543 expanded, 14676 reopened
+[t=1.8905s, 64912 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 374722
+[t=1.89053s, 64912 KB] g=16041, 47542 evaluated, 28543 expanded, 14676 reopened
+[t=1.97614s, 66364 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 374400
+[t=1.97622s, 66364 KB] g=17519, 49490 evaluated, 30024 expanded, 15482 reopened
+[t=1.97631s, 66364 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 373328
+[t=1.97633s, 66364 KB] g=17613, 49493 evaluated, 30024 expanded, 15482 reopened
+[t=46.4409s, 1087328 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 372112
+[t=46.4414s, 1087328 KB] g=18247, 604888 evaluated, 1001621 expanded, 744922 reopened
+[t=46.4415s, 1087328 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 371386
+[t=46.4415s, 1087328 KB] g=17901, 604891 evaluated, 1001621 expanded, 744922 reopened
+[t=62.2311s, 1223828 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 369573
+[t=62.2313s, 1223828 KB] g=19563, 862647 evaluated, 1316672 expanded, 931246 reopened
+[t=62.2314s, 1223828 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 369237
+[t=62.2314s, 1223828 KB] g=19173, 862650 evaluated, 1316672 expanded, 931246 reopened
+[t=89.7673s, 1463728 KB] New best heuristic value for add(verbosity = normal, transform = no_transform, cache_estimates = true): 367073
+[t=89.7674s, 1463728 KB] g=20298, 1232644 evaluated, 1897162 expanded, 1341255 reopened
+Peak memory: 4362932 KB
+caught signal 2 -- exiting

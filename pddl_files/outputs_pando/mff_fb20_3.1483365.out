@@ -1,0 +1,30 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is weighted A* with weight 5.
+Metric is ((1.00*[RF0](TOTAL-COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+advancing to goal distance:  100
+                              99
+                              98
+                              97
+                              96
+                              95
+                              94
+                              93
+                              92
+                              91
+                              90
+                              89
+                              88
+                              87
+                              86
+                              85

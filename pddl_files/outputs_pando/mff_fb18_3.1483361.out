@@ -1,0 +1,11 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+unknown constant G0 in function DISTANCE. check input files
+
