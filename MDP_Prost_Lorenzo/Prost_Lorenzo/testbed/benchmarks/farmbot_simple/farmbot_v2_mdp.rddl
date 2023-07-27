@@ -1,0 +1,156 @@
+// Created on 14/02/23 at 12:25 by Lorenzo Buizza
+
+domain farmbot_v2_mdp {
+	requirements = {
+		preconditions,
+		reward-deterministic
+	};
+	
+	types {
+		wp : object;
+	};
+	
+	pvariables {
+		
+		// non-fluents
+		LOCATION_TYPE(wp) : {non-fluent, int, default = 2};
+		DISTANCE(wp,wp) : {non-fluent, int, default = 0};
+		COST_MOUNT_TOOL : {non-fluent, int, default = 500};
+		COST_DISMOUNT_TOOL : {non-fluent, int, default = 500};
+		
+		// fluents
+		robot-at(wp) : {state-fluent, bool, default = false};
+		watered(wp) : {state-fluent, bool, default = false};
+		takendatab4(wp) : {state-fluent, bool, default = false};
+		takendataaf(wp) : {state-fluent, bool, default = false};
+		carryss : {state-fluent, bool, default = false};
+		carrywn : {state-fluent, bool, default = false};
+		bare-robot : {state-fluent, bool, default = true};
+		finished : {state-fluent, bool, default = false};
+		
+		// actions
+		move(wp,wp) : {action-fluent, bool, default = false};
+		mountwn : {action-fluent, bool, default = false};
+		dismountwn : {action-fluent, bool, default = false};
+		mountss : {action-fluent, bool, default = false};
+		dismountss : {action-fluent, bool, default = false};
+		water(wp) : {action-fluent, bool, default = false};
+		takedata_b4(wp) : {action-fluent, bool, default = false};
+		takedata_af(wp) : {action-fluent, bool, default = false};
+	};
+	
+	cpfs {
+	
+		robot-at'(?w) = if (exists_{?ww : wp} [robot-at(?ww) ^ move(?ww, ?w)])
+				 then KronDelta(true)
+				 else if (exists_{?ww : wp} [robot-at(?w) ^ move(?w, ?ww)])
+				 then KronDelta(false)
+				 else
+				 KronDelta(robot-at(?w));
+		
+		carrywn' = if (bare-robot ^ (mountwn ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)])))
+			   then KronDelta(true)
+			   else if (carrywn ^ (dismountwn ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)])))
+			   then KronDelta(false)
+			   else
+			   KronDelta(carrywn);
+		
+		carryss' = if (bare-robot ^ (mountss ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)])))
+			   then KronDelta(true)
+			   else if (carryss ^ (dismountss ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)])))
+			   then KronDelta(false)
+			   else
+			   KronDelta(carryss);
+		
+		bare-robot' = if (bare-robot ^ ((mountwn ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)])) | (mountss ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)]))))
+			   then KronDelta(false)
+			   else if ((carrywn ^ (dismountwn ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)]))) | (carryss ^ (dismountss ^ (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)]))))
+			   then KronDelta(true)
+			   else
+			   KronDelta(bare-robot);
+		
+		takendatab4'(?w) = if (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ takedata_b4(?w))
+			       then KronDelta(true)
+			       else
+			       KronDelta(takendatab4(?w));
+		
+		watered'(?w) = if (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ takendatab4(?w) ^ water(?w))
+			       then KronDelta(true)
+			       else
+			       KronDelta(watered(?w));
+		
+		takendataaf'(?w) = if (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ takendatab4(?w) ^ watered(?w) ^ takedata_af(?w))
+			           then KronDelta(true)
+			           else
+			           KronDelta(takendataaf(?w));
+		
+		finished' = if (bare-robot ^ 
+			       (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 6)]) ^ 
+			       (forall_{?w : wp} [((LOCATION_TYPE(?w) == 2) ^ (takendataaf(?w))) | ((LOCATION_TYPE(?w) ~= 2) ^ (~watered(?w)) ^ (~takendatab4(?w)) ^ (~takendataaf(?w)))]))
+			    then KronDelta(true)
+			    else
+			    KronDelta(finished);
+		
+		//totalct' = if (mountss | dismountss | mountwn | dismountwn)
+		//	      then (totalct + 1000)
+		//	      else if ((exists_{?w : wp} [water(?w) | takedata_b4(?w) | takedata_af(?w)]))
+		//	      then (totalct + 500)
+		//	      else if ((exists_{?w1 : wp, ?w2 : wp} [move(?w1,?w2)]))
+		//	      then (totalct + 100)
+		//	      else
+		//	      totalct; 
+
+	};
+		
+	
+	//reward = sum_{?w : wp}[~takendatab4(?w) ^ takedata_b4(?w)];
+	
+	
+	reward = - 1 * (sum_{?w1 : wp, ?w2 : wp}[move(?w1, ?w2) * DISTANCE(?w1, ?w2)]) +
+		 100000 * (sum_{?w : wp}[takendatab4(?w)]) +
+		 100000 * (sum_{?w : wp}[watered(?w)]) +
+		 100000 * (sum_{?w : wp}[takendataaf(?w)]) + 
+		 1000000 * (finished);
+	
+	action-preconditions {
+		// the action move(w1,w2) can be executed only if the robot is located at w1, and it's not possible
+		// for the robot to move to the same waypoint where's at
+		(forall_{?w1 : wp, ?w2 : wp} [move(?w1,?w2) => (robot-at(?w1) ^ ((?w1) ~= (?w2)))]);
+		
+        	// to water, the watering nozzle is required
+        	(forall_{?w : wp} [water(?w) => carrywn]);
+        	
+        	// to take data, the soil sensor is required
+        	(forall_{?w : wp} [takedata_b4(?w) => carryss]);
+        	(forall_{?w : wp} [takedata_af(?w) => carryss]);
+        	
+        	// the robot can be at max 1 position
+        	((sum_{?w : wp}[robot-at(?w)]) <= 1);
+
+		// the robot can mount something only when it's bare and viceversa
+		mountwn => bare-robot;
+		mountss => bare-robot;
+		dismountss => carryss;
+		dismountwn => carrywn;
+		
+		// the robot can have max 1 tool at a time
+		carrywn + carryss + bare-robot <= 1;
+		
+		// the robot can water a wp only if it's located at that wp, and the wp is not the base or a tool location
+		(forall_{?w : wp}[water(?w) => (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ (takendatab4(?w)) ^ (~watered(?w)))]);
+		
+		// the robot can take data of a wp only if it's located at that wp, and the wp is not the base or a tool location
+		(forall_{?w : wp}[takedata_b4(?w) => (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ (~takendatab4(?w)))]);
+		(forall_{?w : wp}[takedata_af(?w) => (robot-at(?w) ^ (LOCATION_TYPE(?w) == 2) ^ watered(?w) ^ (~takendataaf(?w)))]);
+		
+		// can dismount / mount the watering nozzle only at waypoint z1
+		mountwn => (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)]);
+		dismountwn => (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 1)]);
+	
+		// can dismount / mount the soil sensoronly at waypoint z0
+		mountss => (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)]);
+		dismountss => (exists_{?w : wp} [robot-at(?w) ^ (LOCATION_TYPE(?w) == 0)]);
+		
+    	};
+	
+}
