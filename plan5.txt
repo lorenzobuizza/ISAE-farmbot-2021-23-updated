@@ -1,0 +1,108 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](ENERGYCONS)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   28 into depth [1][2][3][4][5]
+                                  27            [1][2]
+                                  26            [1][2]
+                                  25            [1][2]
+                                  24            [1][2]
+                                  23            [1][2]
+                                  22            [1][2][3][4][5][6][7]
+                                  21            [1][2]
+                                  20            [1][2]
+                                  19            [1][2]
+                                  18            [1][2]
+                                  17            [1][2]
+                                  16            [1][2]
+                                  15            [1]
+                                  14            [1][2][3][4]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1][2]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 B2
+        1: MOVE FARMBOT B2 Z0
+        2: MOUNT FARMBOT SOILSENSOR Z0
+        3: MOVE FARMBOT Z0 B2
+        4: PERFORM FARMBOT SOILSENSOR B2 TAKEDATABEFORE IRRIGATE
+        5: MOVE FARMBOT B2 B1
+        6: PERFORM FARMBOT SOILSENSOR B1 TAKEDATABEFORE IRRIGATE
+        7: MOVE FARMBOT B1 B0
+        8: PERFORM FARMBOT SOILSENSOR B0 TAKEDATABEFORE IRRIGATE
+        9: MOVE FARMBOT B0 A2
+       10: PERFORM FARMBOT SOILSENSOR A2 TAKEDATABEFORE IRRIGATE
+       11: MOVE FARMBOT A2 A1
+       12: PERFORM FARMBOT SOILSENSOR A1 TAKEDATABEFORE IRRIGATE
+       13: MOVE FARMBOT A1 A0
+       14: PERFORM FARMBOT SOILSENSOR A0 TAKEDATABEFORE IRRIGATE
+       15: MOVE FARMBOT A0 Z0
+       16: DISMOUNT FARMBOT SOILSENSOR Z0
+       17: MOVE FARMBOT Z0 B2
+       18: MOVE FARMBOT B2 Z1
+       19: MOUNT FARMBOT WATERINGNOZZLE Z1
+       20: MOVE FARMBOT Z1 B2
+       21: PERFORM FARMBOT WATERINGNOZZLE B2 IRRIGATE TAKEDATABEFORE
+       22: MOVE FARMBOT B2 B1
+       23: PERFORM FARMBOT WATERINGNOZZLE B1 IRRIGATE TAKEDATABEFORE
+       24: MOVE FARMBOT B1 B0
+       25: PERFORM FARMBOT WATERINGNOZZLE B0 IRRIGATE TAKEDATABEFORE
+       26: MOVE FARMBOT B0 A2
+       27: PERFORM FARMBOT WATERINGNOZZLE A2 IRRIGATE TAKEDATABEFORE
+       28: MOVE FARMBOT A2 A1
+       29: PERFORM FARMBOT WATERINGNOZZLE A1 IRRIGATE TAKEDATABEFORE
+       30: MOVE FARMBOT A1 A0
+       31: PERFORM FARMBOT WATERINGNOZZLE A0 IRRIGATE TAKEDATABEFORE
+       32: MOVE FARMBOT A0 Z1
+       33: DISMOUNT FARMBOT WATERINGNOZZLE Z1
+       34: MOVE FARMBOT Z1 B2
+       35: MOVE FARMBOT B2 Z0
+       36: MOUNT FARMBOT SOILSENSOR Z0
+       37: MOVE FARMBOT Z0 B2
+       38: PERFORM FARMBOT SOILSENSOR B2 TAKEDATAAFTER IRRIGATE
+       39: MOVE FARMBOT B2 B1
+       40: PERFORM FARMBOT SOILSENSOR B1 TAKEDATAAFTER IRRIGATE
+       41: MOVE FARMBOT B1 B0
+       42: PERFORM FARMBOT SOILSENSOR B0 TAKEDATAAFTER IRRIGATE
+       43: MOVE FARMBOT B0 A2
+       44: PERFORM FARMBOT SOILSENSOR A2 TAKEDATAAFTER IRRIGATE
+       45: MOVE FARMBOT A2 A1
+       46: PERFORM FARMBOT SOILSENSOR A1 TAKEDATAAFTER IRRIGATE
+       47: MOVE FARMBOT A1 A0
+       48: PERFORM FARMBOT SOILSENSOR A0 TAKEDATAAFTER IRRIGATE
+       49: MOVE FARMBOT A0 Z0
+       50: DISMOUNT FARMBOT SOILSENSOR Z0
+       51: MOVE FARMBOT Z0 A0
+       52: MOVE FARMBOT A0 Z6
+plan cost: 42116.000000
+
+time spent:    0.00 seconds instantiating 125 easy, 30 hard action templates
+               0.00 seconds reachability analysis, yielding 32 facts and 106 actions
+               0.00 seconds creating final representation with 32 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 208 states, to a max depth of 7
+               0.00 seconds total time
+

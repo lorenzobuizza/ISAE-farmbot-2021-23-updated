@@ -1,0 +1,374 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](ENERGYCONS)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:  136 into depth [1][2][3][4]
+                                 135            [1][2]
+                                 134            [1][2]
+                                 133            [1][2]
+                                 132            [1][2]
+                                 131            [1][2]
+                                 130            [1][2]
+                                 129            [1][2]
+                                 128            [1][2]
+                                 127            [1][2]
+                                 126            [1][2]
+                                 125            [1][2]
+                                 124            [1][2]
+                                 123            [1][2]
+                                 122            [1][2]
+                                 121            [1][2]
+                                 120            [1][2]
+                                 119            [1][2]
+                                 118            [1][2]
+                                 117            [1][2]
+                                 116            [1][2]
+                                 115            [1][2]
+                                 114            [1][2]
+                                 113            [1][2]
+                                 112            [1][2]
+                                 111            [1][2]
+                                 110            [1][2]
+                                 109            [1][2]
+                                 108            [1][2]
+                                 107            [1][2]
+                                 106            [1][2]
+                                 105            [1][2]
+                                 104            [1][2]
+                                 103            [1][2][3][4][5][6]
+                                 102            [1][2]
+                                 101            [1][2]
+                                 100            [1][2]
+                                  99            [1][2]
+                                  98            [1][2]
+                                  97            [1][2]
+                                  96            [1][2]
+                                  95            [1][2]
+                                  94            [1][2]
+                                  93            [1][2]
+                                  92            [1][2]
+                                  91            [1][2]
+                                  90            [1][2]
+                                  89            [1][2]
+                                  88            [1][2]
+                                  87            [1][2]
+                                  86            [1][2]
+                                  85            [1][2]
+                                  84            [1][2]
+                                  83            [1][2]
+                                  82            [1][2]
+                                  81            [1][2]
+                                  80            [1][2]
+                                  79            [1][2]
+                                  78            [1][2]
+                                  77            [1][2]
+                                  76            [1][2]
+                                  75            [1][2]
+                                  74            [1][2]
+                                  73            [1][2]
+                                  72            [1][2]
+                                  71            [1][2]
+                                  70            [1][2]
+                                  69            [1]
+                                  68            [1][2][3]
+                                  67            [1]
+                                  66            [1]
+                                  65            [1]
+                                  64            [1]
+                                  63            [1]
+                                  62            [1]
+                                  61            [1]
+                                  60            [1]
+                                  59            [1]
+                                  58            [1]
+                                  57            [1]
+                                  56            [1]
+                                  55            [1]
+                                  54            [1]
+                                  53            [1]
+                                  52            [1]
+                                  51            [1]
+                                  50            [1]
+                                  49            [1]
+                                  48            [1]
+                                  47            [1]
+                                  46            [1]
+                                  45            [1]
+                                  44            [1]
+                                  43            [1]
+                                  42            [1]
+                                  41            [1]
+                                  40            [1]
+                                  39            [1]
+                                  38            [1]
+                                  37            [1]
+                                  36            [1]
+                                  35            [1]
+                                  34            [1]
+                                  33            [1]
+                                  32            [1]
+                                  31            [1]
+                                  30            [1]
+                                  29            [1]
+                                  28            [1]
+                                  27            [1]
+                                  26            [1]
+                                  25            [1]
+                                  24            [1]
+                                  23            [1]
+                                  22            [1]
+                                  21            [1]
+                                  20            [1]
+                                  19            [1]
+                                  18            [1]
+                                  17            [1]
+                                  16            [1]
+                                  15            [1]
+                                  14            [1]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 Z0
+        1: MOUNT FARMBOT SOILSENSOR Z0
+        2: MOVE FARMBOT Z0 K2
+        3: PERFORM FARMBOT SOILSENSOR K2 TAKEDATABEFORE IRRIGATE
+        4: MOVE FARMBOT K2 K1
+        5: PERFORM FARMBOT SOILSENSOR K1 TAKEDATABEFORE IRRIGATE
+        6: MOVE FARMBOT K1 K0
+        7: PERFORM FARMBOT SOILSENSOR K0 TAKEDATABEFORE IRRIGATE
+        8: MOVE FARMBOT K0 J2
+        9: PERFORM FARMBOT SOILSENSOR J2 TAKEDATABEFORE IRRIGATE
+       10: MOVE FARMBOT J2 J1
+       11: PERFORM FARMBOT SOILSENSOR J1 TAKEDATABEFORE IRRIGATE
+       12: MOVE FARMBOT J1 J0
+       13: PERFORM FARMBOT SOILSENSOR J0 TAKEDATABEFORE IRRIGATE
+       14: MOVE FARMBOT J0 I2
+       15: PERFORM FARMBOT SOILSENSOR I2 TAKEDATABEFORE IRRIGATE
+       16: MOVE FARMBOT I2 I1
+       17: PERFORM FARMBOT SOILSENSOR I1 TAKEDATABEFORE IRRIGATE
+       18: MOVE FARMBOT I1 I0
+       19: PERFORM FARMBOT SOILSENSOR I0 TAKEDATABEFORE IRRIGATE
+       20: MOVE FARMBOT I0 H2
+       21: PERFORM FARMBOT SOILSENSOR H2 TAKEDATABEFORE IRRIGATE
+       22: MOVE FARMBOT H2 H1
+       23: PERFORM FARMBOT SOILSENSOR H1 TAKEDATABEFORE IRRIGATE
+       24: MOVE FARMBOT H1 H0
+       25: PERFORM FARMBOT SOILSENSOR H0 TAKEDATABEFORE IRRIGATE
+       26: MOVE FARMBOT H0 G2
+       27: PERFORM FARMBOT SOILSENSOR G2 TAKEDATABEFORE IRRIGATE
+       28: MOVE FARMBOT G2 G1
+       29: PERFORM FARMBOT SOILSENSOR G1 TAKEDATABEFORE IRRIGATE
+       30: MOVE FARMBOT G1 G0
+       31: PERFORM FARMBOT SOILSENSOR G0 TAKEDATABEFORE IRRIGATE
+       32: MOVE FARMBOT G0 F2
+       33: PERFORM FARMBOT SOILSENSOR F2 TAKEDATABEFORE IRRIGATE
+       34: MOVE FARMBOT F2 F1
+       35: PERFORM FARMBOT SOILSENSOR F1 TAKEDATABEFORE IRRIGATE
+       36: MOVE FARMBOT F1 F0
+       37: PERFORM FARMBOT SOILSENSOR F0 TAKEDATABEFORE IRRIGATE
+       38: MOVE FARMBOT F0 E2
+       39: PERFORM FARMBOT SOILSENSOR E2 TAKEDATABEFORE IRRIGATE
+       40: MOVE FARMBOT E2 E1
+       41: PERFORM FARMBOT SOILSENSOR E1 TAKEDATABEFORE IRRIGATE
+       42: MOVE FARMBOT E1 E0
+       43: PERFORM FARMBOT SOILSENSOR E0 TAKEDATABEFORE IRRIGATE
+       44: MOVE FARMBOT E0 D2
+       45: PERFORM FARMBOT SOILSENSOR D2 TAKEDATABEFORE IRRIGATE
+       46: MOVE FARMBOT D2 D1
+       47: PERFORM FARMBOT SOILSENSOR D1 TAKEDATABEFORE IRRIGATE
+       48: MOVE FARMBOT D1 D0
+       49: PERFORM FARMBOT SOILSENSOR D0 TAKEDATABEFORE IRRIGATE
+       50: MOVE FARMBOT D0 C2
+       51: PERFORM FARMBOT SOILSENSOR C2 TAKEDATABEFORE IRRIGATE
+       52: MOVE FARMBOT C2 C1
+       53: PERFORM FARMBOT SOILSENSOR C1 TAKEDATABEFORE IRRIGATE
+       54: MOVE FARMBOT C1 C0
+       55: PERFORM FARMBOT SOILSENSOR C0 TAKEDATABEFORE IRRIGATE
+       56: MOVE FARMBOT C0 B2
+       57: PERFORM FARMBOT SOILSENSOR B2 TAKEDATABEFORE IRRIGATE
+       58: MOVE FARMBOT B2 B1
+       59: PERFORM FARMBOT SOILSENSOR B1 TAKEDATABEFORE IRRIGATE
+       60: MOVE FARMBOT B1 B0
+       61: PERFORM FARMBOT SOILSENSOR B0 TAKEDATABEFORE IRRIGATE
+       62: MOVE FARMBOT B0 A2
+       63: PERFORM FARMBOT SOILSENSOR A2 TAKEDATABEFORE IRRIGATE
+       64: MOVE FARMBOT A2 A1
+       65: PERFORM FARMBOT SOILSENSOR A1 TAKEDATABEFORE IRRIGATE
+       66: MOVE FARMBOT A1 A0
+       67: PERFORM FARMBOT SOILSENSOR A0 TAKEDATABEFORE IRRIGATE
+       68: MOVE FARMBOT A0 Z0
+       69: DISMOUNT FARMBOT SOILSENSOR Z0
+       70: MOVE FARMBOT Z0 Z1
+       71: MOUNT FARMBOT WATERINGNOZZLE Z1
+       72: MOVE FARMBOT Z1 K2
+       73: PERFORM FARMBOT WATERINGNOZZLE K2 IRRIGATE TAKEDATABEFORE
+       74: MOVE FARMBOT K2 K1
+       75: PERFORM FARMBOT WATERINGNOZZLE K1 IRRIGATE TAKEDATABEFORE
+       76: MOVE FARMBOT K1 K0
+       77: PERFORM FARMBOT WATERINGNOZZLE K0 IRRIGATE TAKEDATABEFORE
+       78: MOVE FARMBOT K0 J2
+       79: PERFORM FARMBOT WATERINGNOZZLE J2 IRRIGATE TAKEDATABEFORE
+       80: MOVE FARMBOT J2 J1
+       81: PERFORM FARMBOT WATERINGNOZZLE J1 IRRIGATE TAKEDATABEFORE
+       82: MOVE FARMBOT J1 J0
+       83: PERFORM FARMBOT WATERINGNOZZLE J0 IRRIGATE TAKEDATABEFORE
+       84: MOVE FARMBOT J0 I2
+       85: PERFORM FARMBOT WATERINGNOZZLE I2 IRRIGATE TAKEDATABEFORE
+       86: MOVE FARMBOT I2 I1
+       87: PERFORM FARMBOT WATERINGNOZZLE I1 IRRIGATE TAKEDATABEFORE
+       88: MOVE FARMBOT I1 I0
+       89: PERFORM FARMBOT WATERINGNOZZLE I0 IRRIGATE TAKEDATABEFORE
+       90: MOVE FARMBOT I0 H2
+       91: PERFORM FARMBOT WATERINGNOZZLE H2 IRRIGATE TAKEDATABEFORE
+       92: MOVE FARMBOT H2 H1
+       93: PERFORM FARMBOT WATERINGNOZZLE H1 IRRIGATE TAKEDATABEFORE
+       94: MOVE FARMBOT H1 H0
+       95: PERFORM FARMBOT WATERINGNOZZLE H0 IRRIGATE TAKEDATABEFORE
+       96: MOVE FARMBOT H0 G2
+       97: PERFORM FARMBOT WATERINGNOZZLE G2 IRRIGATE TAKEDATABEFORE
+       98: MOVE FARMBOT G2 G1
+       99: PERFORM FARMBOT WATERINGNOZZLE G1 IRRIGATE TAKEDATABEFORE
+      100: MOVE FARMBOT G1 G0
+      101: PERFORM FARMBOT WATERINGNOZZLE G0 IRRIGATE TAKEDATABEFORE
+      102: MOVE FARMBOT G0 F2
+      103: PERFORM FARMBOT WATERINGNOZZLE F2 IRRIGATE TAKEDATABEFORE
+      104: MOVE FARMBOT F2 F1
+      105: PERFORM FARMBOT WATERINGNOZZLE F1 IRRIGATE TAKEDATABEFORE
+      106: MOVE FARMBOT F1 F0
+      107: PERFORM FARMBOT WATERINGNOZZLE F0 IRRIGATE TAKEDATABEFORE
+      108: MOVE FARMBOT F0 E2
+      109: PERFORM FARMBOT WATERINGNOZZLE E2 IRRIGATE TAKEDATABEFORE
+      110: MOVE FARMBOT E2 E1
+      111: PERFORM FARMBOT WATERINGNOZZLE E1 IRRIGATE TAKEDATABEFORE
+      112: MOVE FARMBOT E1 E0
+      113: PERFORM FARMBOT WATERINGNOZZLE E0 IRRIGATE TAKEDATABEFORE
+      114: MOVE FARMBOT E0 D2
+      115: PERFORM FARMBOT WATERINGNOZZLE D2 IRRIGATE TAKEDATABEFORE
+      116: MOVE FARMBOT D2 D1
+      117: PERFORM FARMBOT WATERINGNOZZLE D1 IRRIGATE TAKEDATABEFORE
+      118: MOVE FARMBOT D1 D0
+      119: PERFORM FARMBOT WATERINGNOZZLE D0 IRRIGATE TAKEDATABEFORE
+      120: MOVE FARMBOT D0 C2
+      121: PERFORM FARMBOT WATERINGNOZZLE C2 IRRIGATE TAKEDATABEFORE
+      122: MOVE FARMBOT C2 C1
+      123: PERFORM FARMBOT WATERINGNOZZLE C1 IRRIGATE TAKEDATABEFORE
+      124: MOVE FARMBOT C1 C0
+      125: PERFORM FARMBOT WATERINGNOZZLE C0 IRRIGATE TAKEDATABEFORE
+      126: MOVE FARMBOT C0 B2
+      127: PERFORM FARMBOT WATERINGNOZZLE B2 IRRIGATE TAKEDATABEFORE
+      128: MOVE FARMBOT B2 B1
+      129: PERFORM FARMBOT WATERINGNOZZLE B1 IRRIGATE TAKEDATABEFORE
+      130: MOVE FARMBOT B1 B0
+      131: PERFORM FARMBOT WATERINGNOZZLE B0 IRRIGATE TAKEDATABEFORE
+      132: MOVE FARMBOT B0 A2
+      133: PERFORM FARMBOT WATERINGNOZZLE A2 IRRIGATE TAKEDATABEFORE
+      134: MOVE FARMBOT A2 A1
+      135: PERFORM FARMBOT WATERINGNOZZLE A1 IRRIGATE TAKEDATABEFORE
+      136: MOVE FARMBOT A1 A0
+      137: PERFORM FARMBOT WATERINGNOZZLE A0 IRRIGATE TAKEDATABEFORE
+      138: MOVE FARMBOT A0 Z1
+      139: DISMOUNT FARMBOT WATERINGNOZZLE Z1
+      140: MOVE FARMBOT Z1 Z0
+      141: MOUNT FARMBOT SOILSENSOR Z0
+      142: MOVE FARMBOT Z0 K2
+      143: PERFORM FARMBOT SOILSENSOR K2 TAKEDATAAFTER IRRIGATE
+      144: MOVE FARMBOT K2 K1
+      145: PERFORM FARMBOT SOILSENSOR K1 TAKEDATAAFTER IRRIGATE
+      146: MOVE FARMBOT K1 K0
+      147: PERFORM FARMBOT SOILSENSOR K0 TAKEDATAAFTER IRRIGATE
+      148: MOVE FARMBOT K0 J2
+      149: PERFORM FARMBOT SOILSENSOR J2 TAKEDATAAFTER IRRIGATE
+      150: MOVE FARMBOT J2 J1
+      151: PERFORM FARMBOT SOILSENSOR J1 TAKEDATAAFTER IRRIGATE
+      152: MOVE FARMBOT J1 J0
+      153: PERFORM FARMBOT SOILSENSOR J0 TAKEDATAAFTER IRRIGATE
+      154: MOVE FARMBOT J0 I2
+      155: PERFORM FARMBOT SOILSENSOR I2 TAKEDATAAFTER IRRIGATE
+      156: MOVE FARMBOT I2 I1
+      157: PERFORM FARMBOT SOILSENSOR I1 TAKEDATAAFTER IRRIGATE
+      158: MOVE FARMBOT I1 I0
+      159: PERFORM FARMBOT SOILSENSOR I0 TAKEDATAAFTER IRRIGATE
+      160: MOVE FARMBOT I0 H2
+      161: PERFORM FARMBOT SOILSENSOR H2 TAKEDATAAFTER IRRIGATE
+      162: MOVE FARMBOT H2 H1
+      163: PERFORM FARMBOT SOILSENSOR H1 TAKEDATAAFTER IRRIGATE
+      164: MOVE FARMBOT H1 H0
+      165: PERFORM FARMBOT SOILSENSOR H0 TAKEDATAAFTER IRRIGATE
+      166: MOVE FARMBOT H0 G2
+      167: PERFORM FARMBOT SOILSENSOR G2 TAKEDATAAFTER IRRIGATE
+      168: MOVE FARMBOT G2 G1
+      169: PERFORM FARMBOT SOILSENSOR G1 TAKEDATAAFTER IRRIGATE
+      170: MOVE FARMBOT G1 G0
+      171: PERFORM FARMBOT SOILSENSOR G0 TAKEDATAAFTER IRRIGATE
+      172: MOVE FARMBOT G0 F2
+      173: PERFORM FARMBOT SOILSENSOR F2 TAKEDATAAFTER IRRIGATE
+      174: MOVE FARMBOT F2 F1
+      175: PERFORM FARMBOT SOILSENSOR F1 TAKEDATAAFTER IRRIGATE
+      176: MOVE FARMBOT F1 F0
+      177: PERFORM FARMBOT SOILSENSOR F0 TAKEDATAAFTER IRRIGATE
+      178: MOVE FARMBOT F0 E2
+      179: PERFORM FARMBOT SOILSENSOR E2 TAKEDATAAFTER IRRIGATE
+      180: MOVE FARMBOT E2 E1
+      181: PERFORM FARMBOT SOILSENSOR E1 TAKEDATAAFTER IRRIGATE
+      182: MOVE FARMBOT E1 E0
+      183: PERFORM FARMBOT SOILSENSOR E0 TAKEDATAAFTER IRRIGATE
+      184: MOVE FARMBOT E0 D2
+      185: PERFORM FARMBOT SOILSENSOR D2 TAKEDATAAFTER IRRIGATE
+      186: MOVE FARMBOT D2 D1
+      187: PERFORM FARMBOT SOILSENSOR D1 TAKEDATAAFTER IRRIGATE
+      188: MOVE FARMBOT D1 D0
+      189: PERFORM FARMBOT SOILSENSOR D0 TAKEDATAAFTER IRRIGATE
+      190: MOVE FARMBOT D0 C2
+      191: PERFORM FARMBOT SOILSENSOR C2 TAKEDATAAFTER IRRIGATE
+      192: MOVE FARMBOT C2 C1
+      193: PERFORM FARMBOT SOILSENSOR C1 TAKEDATAAFTER IRRIGATE
+      194: MOVE FARMBOT C1 C0
+      195: PERFORM FARMBOT SOILSENSOR C0 TAKEDATAAFTER IRRIGATE
+      196: MOVE FARMBOT C0 B2
+      197: PERFORM FARMBOT SOILSENSOR B2 TAKEDATAAFTER IRRIGATE
+      198: MOVE FARMBOT B2 B1
+      199: PERFORM FARMBOT SOILSENSOR B1 TAKEDATAAFTER IRRIGATE
+      200: MOVE FARMBOT B1 B0
+      201: PERFORM FARMBOT SOILSENSOR B0 TAKEDATAAFTER IRRIGATE
+      202: MOVE FARMBOT B0 A2
+      203: PERFORM FARMBOT SOILSENSOR A2 TAKEDATAAFTER IRRIGATE
+      204: MOVE FARMBOT A2 A1
+      205: PERFORM FARMBOT SOILSENSOR A1 TAKEDATAAFTER IRRIGATE
+      206: MOVE FARMBOT A1 A0
+      207: PERFORM FARMBOT SOILSENSOR A0 TAKEDATAAFTER IRRIGATE
+      208: MOVE FARMBOT A0 Z0
+      209: DISMOUNT FARMBOT SOILSENSOR Z0
+      210: MOVE FARMBOT Z0 Z6
+plan cost: 130737.000000
+
+time spent:    0.00 seconds instantiating 1448 easy, 165 hard action templates
+               0.00 seconds reachability analysis, yielding 140 facts and 1465 actions
+               0.00 seconds creating final representation with 140 relevant facts, 1 relevant fluents
+               0.01 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.49 seconds searching, evaluating 3288 states, to a max depth of 6
+               0.50 seconds total time
+

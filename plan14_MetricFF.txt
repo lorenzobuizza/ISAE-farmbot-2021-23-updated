@@ -1,0 +1,106 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is weighted A* with weight 5.
+Metric is ((1.00*[RF0](TOTAL-COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   28 into depth [1][2][3][4]
+                                  27            [1][2]
+                                  26            [1][2]
+                                  25            [1][2]
+                                  24            [1][2]
+                                  23            [1][2]
+                                  22            [1][2][3][4][5][6]
+                                  21            [1][2]
+                                  20            [1][2]
+                                  19            [1][2]
+                                  18            [1][2]
+                                  17            [1][2]
+                                  16            [1][2]
+                                  15            [1]
+                                  14            [1][2][3]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+a0 is apple, a1 is pear, a2 is peach, b0 is dog, b1 is cat, b2 is bird
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 Z0
+        1: MOUNTSOILSENSOR FARMBOT
+        2: MOVE FARMBOT Z0 BIRD
+        3: TAKEDATABEFORE FARMBOT BIRD
+        4: MOVE FARMBOT BIRD CAT
+        5: TAKEDATABEFORE FARMBOT CAT
+        6: MOVE FARMBOT CAT DOG
+        7: TAKEDATABEFORE FARMBOT DOG
+        8: MOVE FARMBOT DOG PEACH
+        9: TAKEDATABEFORE FARMBOT PEACH
+       10: MOVE FARMBOT PEACH PEAR
+       11: TAKEDATABEFORE FARMBOT PEAR
+       12: MOVE FARMBOT PEAR APPLE
+       13: TAKEDATABEFORE FARMBOT APPLE
+       14: MOVE FARMBOT APPLE Z0
+       15: DISMOUNTSOILSENSOR FARMBOT
+       16: MOVE FARMBOT Z0 Z1
+       17: MOUNTWATERNOZZLE FARMBOT
+       18: MOVE FARMBOT Z1 BIRD
+       19: WATERSOIL FARMBOT BIRD
+       20: MOVE FARMBOT BIRD CAT
+       21: WATERSOIL FARMBOT CAT
+       22: MOVE FARMBOT CAT DOG
+       23: WATERSOIL FARMBOT DOG
+       24: MOVE FARMBOT DOG PEACH
+       25: WATERSOIL FARMBOT PEACH
+       26: MOVE FARMBOT PEACH PEAR
+       27: WATERSOIL FARMBOT PEAR
+       28: MOVE FARMBOT PEAR APPLE
+       29: WATERSOIL FARMBOT APPLE
+       30: MOVE FARMBOT APPLE Z1
+       31: DISMOUNTWATERNOZZLE FARMBOT
+       32: MOVE FARMBOT Z1 Z0
+       33: MOUNTSOILSENSOR FARMBOT
+       34: MOVE FARMBOT Z0 BIRD
+       35: TAKEDATAAFTER FARMBOT BIRD
+       36: MOVE FARMBOT BIRD CAT
+       37: TAKEDATAAFTER FARMBOT CAT
+       38: MOVE FARMBOT CAT DOG
+       39: TAKEDATAAFTER FARMBOT DOG
+       40: MOVE FARMBOT DOG PEACH
+       41: TAKEDATAAFTER FARMBOT PEACH
+       42: MOVE FARMBOT PEACH PEAR
+       43: TAKEDATAAFTER FARMBOT PEAR
+       44: MOVE FARMBOT PEAR APPLE
+       45: TAKEDATAAFTER FARMBOT APPLE
+       46: MOVE FARMBOT APPLE Z0
+       47: DISMOUNTSOILSENSOR FARMBOT
+       48: MOVE FARMBOT Z0 Z6
+plan cost: 33717.000000
+
+time spent:    0.00 seconds instantiating 103 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 30 facts and 103 actions
+               0.00 seconds creating final representation with 30 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 210 states, to a max depth of 6
+               0.00 seconds total time
+

@@ -1,0 +1,211 @@
+To run the Metric FF, go inside the Metric FF 2.0 folder and run the command:
+./ff -o domain_v9.pddl -f problem_v9.pddl >plan9.txt 
+And the plan is shown in the file plan9.txt
+
+To run the standard FF, go inside the FF folder and run the command:
+./ff -o domain_v3.pddl -f problem_v3.pddl >plan3.txt 
+And the plan is shown in the file plan3.txt
+
+You should notice that the result is the same.
+
+16/01
+17:49
+I downloaded Barbara's files to check if she used Metric FF. She did, and my conclusion is:
+- she used my same syntax to define the cost of an action and how to increment it
+- she used my same syntax to define how and what metric to minimize
+- one difference: as action cost, she has only put a constant value (and not a variable value like me, depening on the distance between waypoints
+- another difference: she didn't put the distance between the points, but only if a point is adiacent to another one. therefore, by doing that, she has much more precision in the problem.pddl (and she doesn't need to worry about a triangularity problem to be respected)
+
+Moreover: what if I also decide to put a constant distance for the increment of the cost? So, I think it will be like not optimizing any cost. Why? because the farmbot already needs to go to every single waypoint to execute every single action! So, independently on the cost of the action, the farmbot will go to that point anyways, cause it's specified in the goal. In my actual plan (v9) there aren't ALREADY useless actions or useless movements! Everything is necessary and required to satisfy the goal. This means that the planner won't be able to find which is the optimal plan, and for sure it won't be able to find a better plan than the current one. Also because I think the current planner tries to minimize the total length of the plan, so this means that we already have the lowest number of steps. Therefore, for sure if we introduce a fixed cost nothing will change, cause we already have the minimum number of actions with 0 useless actions, so it's already minimizing the cost with fixed cost for each action!
+
+Now I will try to download the FD solver.
+
+
+17/01
+00:02
+I was able to download the FD solver. Now I will copy the domain and problem v9 contained in the Metric FF folder, and I will try to run the solver. Probably I will use A*
+
+# iPDB heuristic with default settings
+ ./fast-downward.py domain.pddl task.pddl --search "astar(ipdb())"
+ 
+ and I will see if i have errors with the action costs or the minimization of the metric. Everything will be re-nominated v10 just for comfort.
+ 
+ 
+ 00:10
+ I ran the solver and I have an error:
+ ./fast-downward.py domain_v10.pddl problem_v10.pddl --search "astar(ipdb())" >plan10.txt
+b'Traceback (most recent call last):\n  File "/home/farmbot-server/downward/builds/release/bin/translate/translate.py", line 723, in <module>\n    main()\n  File "/home/farmbot-server/downward/builds/release/bin/translate/translate.py", line 681, in main\n    task = pddl_parser.open(\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/pddl_file.py", line 38, in open\n    return parsing_functions.parse_task(domain_pddl, task_pddl)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 296, in parse_task\n    domain_name, domain_requirements, types, type_dict, constants, predicates, predicate_dict, functions, actions, axioms \\\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 389, in parse_domain_pddl\n    action = parse_action(entry, type_dict, predicate_dict)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 272, in parse_action\n    cost = parse_effects(\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 142, in parse_effects\n    tmp_effect = parse_effect(alist, type_dict, predicate_dict)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 195, in parse_effect\n    [parse_effect(eff, type_dict, predicate_dict) for eff in alist[1:]])\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 195, in <listcomp>\n    [parse_effect(eff, type_dict, predicate_dict) for eff in alist[1:]])\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl_parser/parsing_functions.py", line 209, in parse_effect\n    assert alist[1] == [\'total-cost\']\nAssertionError\n'
+
+maybe I need to introduce the total-cost somewhere? I will create v11 and I will try with the syntax "total-cost", which is similar to what I'e done in v8 for the Metric FF.
+In particular, in v11 I tried to introduce "total-cost" but without introducing ":action-costs". I will try to see if it works, otherwise I will try with including also ":action-costs".
+I get the following error:
+
+./fast-downward.py domain_v11.pddl problem_v11.pddl --search "astar(ipdb())" >plan11.txt
+b'Traceback (most recent call last):\n  File "/home/farmbot-server/downward/builds/release/bin/translate/translate.py", line 723, in <module>\n    main()\n  File "/home/farmbot-server/downward/builds/release/bin/translate/translate.py", line 694, in main\n    sas_task = pddl_to_sas(task)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/translate.py", line 525, in pddl_to_sas\n    reachable_action_params) = instantiate.explore(task)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/instantiate.py", line 109, in explore\n    return instantiate(task, model)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/instantiate.py", line 82, in instantiate\n    inst_action = action.instantiate(\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl/actions.py", line 94, in instantiate\n    cost = int(self.cost.instantiate(\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl/f_expression.py", line 76, in instantiate\n    expression = self.expression.instantiate(var_mapping, init_facts)\n  File "/home/farmbot-server/downward/builds/release/bin/translate/pddl/f_expression.py", line 52, in instantiate\n    assert result is not None, "Could not find instantiation for PNE: %r" % (str(pne),)\nAssertionError: Could not find instantiation for PNE: \'PNE distance(z6, soilsensor)\'\n'
+
+
+00:34
+After chatting with ChatGPT I get this:
+
+""""""""""""""""""""""""""
+The error message you've provided suggests that there is an issue with an action's cost in your PDDL domain and problem files. The specific error is:
+
+AssertionError: Could not find instantiation for PNE: 'PNE distance(z6, soilsensor)'
+
+This suggests that the planner is unable to find an instantiation for a Predicate Numeric Expression (PNE) called "distance" in the action's cost. The PNE is expecting two parameters, "z6" and "soilsensor".
+
+It seems that there is a mistake in the name of the object, "soilsensor" is not exist in the task.
+You might need to double check that the names used in the PNE are valid objects in the domain file and that they match the names used in the problem file.
+
+Another possibility is that the function distance is not defined in the domain file, please check that the function is well defined and that it is being used correctly in the action cost.
+
+It would be helpful to see the domain and problem files to be sure, if you could share them with me, I could give you a more detailed answer.
+""""""""""""""""""""""""""
+
+
+And it suggested me to:
+
+"""""""""""""""""""""""""
+It looks like you've defined the initial state and the distance between all the locations in the problem file. The error message you shared earlier is caused by a missing value for the PNE (predicate with numeric effect) distance(z6, soilsensor). This means that you haven't defined the distance between location z6 and the soil sensor in your problem file. Also, you should make sure that you have defined the distance between all the other locations and the soil sensor.
+
+Additionally, you should also check if you have defined the distance between all the other locations and the watering nozzle.
+
+It appears that you have defined the distance between each waypoint, however, you haven't defined the distance between the toolbase and the waypoints, which is causing the error.
+
+You should also check that all the variables and objects used in the problem file are defined and have the correct types.
+"""""""""""""""""""""""""
+
+Hence, I modified v11 (and I kept it named v11) by removing everywhere "toolbase" and substituting it with "location". Now I will try again to run it. 
+I obtain the same error.Maybe tomorrow I will try again, otherwise I just leave it.
+
+
+13:53
+I will try to create v12 from v11, but eliminating the tools and introducing specific actions for each tool! I've done it.
+Now I will try to run again FD planner to produce plan12.txt
+I get the following error:
+
+This configuration does not support axioms!
+Terminating.
+Tried to use unsupported feature.
+
+But from ChatGPT it looks like i'm not using any axiom! So I tried to verify on google if FD supports axioms, and it does, but I must select a specific heuristic.
+So I've run v12 with the following command line:
+./fast-downward.py domain_v12.pddl problem_v12.pddl --search "astar(add(verbosity=normal, transform=no_transform(), cache_estimates=true))" >plan12.txt
+
+However, the plan12.txt doesn't provide any output because the processing time is too long and it will never end!
+So I try with a different command, producing plan12_v2.txt with the only possibility I have! (check https://www.fast-downward.org/Doc/Evaluator)
+blind(verbosity=normal, transform=no_transform(), cache_estimates=true)
+
+I obtain the same error.
+The last possibility I have is to run the new version v12 but with the Metric FF planner! So I'll copy paste v12 to create v13 and I'll put the files in the folder of Metric FF.
+I will try to run them.
+
+
+14:53
+I obtained the resulting plan in plan13.txt for the Metric FF! However, by comparing with plan9.txt, I can observe that the plan is IDENTICAL, as well as the final cost. This demonstrate that:
+1. I had v9 pddl files which were syntactically wrong: I found out by trying to run them with the Fast Downward solver, which provides also a debugger. I found out that there were some problems
+   in the definition of the domain file, especially regarding the actions and the tools
+2. I managed to correct these files, cause I produced v12 which was syntactically correct (it could be executed by Fast Downward), but there were axioms which are not supported by FD. I tried 
+   with 2 heuristics but the computing time is endless.
+3. Now, with the syntactically correct files of v13 (identical to v12), I decided to run Metric FF to really see if the problem consisted in my files written wrong or if the problem consisted
+   with the planner not being able to find an optimal solution. By running Metric FF, I obtain the same identical result as v9 and as the Classic FF solver: this means that my files
+   are correct but the Metric FF is not able to find the optimal solution!
+
+I WILL CONCLUDE WITH THE FOLLOWING STATEMENT BY ChatGPT:
+"It is possible that Metric FF may not find the best solution in certain cases. The algorithm is based on heuristics and therefore may not guarantee finding the optimal solution. This can happen if the heuristics used in the planner do not accurately estimate the true cost of reaching the goal state, or if the search space is too large and the algorithm is unable to explore all possible paths before reaching the time or memory limit. Additionally, if the problem contains certain types of symmetries or other features that can cause the algorithm to get stuck in suboptimal branches of the search space, it may not find the best solution."
+
+DECISION: MOVE ON TO THE MDP!
+
+
+
+18/01
+
+14:33
+Now I will try to run again the Metric FF using the new syntax but with a minimal problem (only locations A and B). Then I will try again FD with the minimal problem to see if it converges or not.
+I will also use random names for the waypoints!
+
+For Metric FF: from v13 I will create v14
+For FD: from v12 I will use v14 also!
+
+RESULTS: 
+- for Metric FF with version v14 (new syntax, problem minimized, random names), the plan14_MetricFF.txt is identical to all the others (not optimal). 
+- for FD with version v14 (new syntax, problem minimized, command: "blind(verbosity=normal, transform=no_transform(), cache_estimates=true)"), the plan14_FD.txt IS OPTIMAL! I WAS ABLE TO REDUCE THE TOTAL COST
+
+Now I will try to use the other command option "add(verbosity=normal, transform=no_transform(), cache_estimates=true)" to produce plan14_FD_v2.txt and I'll see if maybe it's different or faster. I OBTAINED A RESULT! It's much faster than using the "blind" option, but I get a total-cost which is much much more expensive! Even more expensive than Metric FF. So it's not optimal.
+
+
+15:23
+I will repeat the same experiment:
+- I will use FD downward "blind", new syntax, simplified problem (but with correct alphabetical names), and I will call this v15. I will also add C column!
+I obtained a result in 60 seconds. I found the plan and it looks like it's the optimal, but just to be sure I will run Metric FF with the same version v15 to see if the total cost is higher or lower. I will also call it v15 in Metric FF, and I will produce plan15_MetricFF.txt.
+I've done it! And I obtain that FD v15 is much better than MetricFF v15 in terms of total-cost. I will communicate this to Nicolas.
+Now I will also try to run it on FD but using also column D, producing v16, just to see the increasing computing time between 6 waypoints, 9 waypoints and 12 waypoints!
+
+
+
+19/01/23
+
+12:54
+SIMULATION RUNNING! DO NOT INTERRUPT OR TURN OFF THE PC!
+Update: after approx 3109 seconds, the program interrupts and I cannot obtain an output. CONCLUSION: I will stop here. I demonstrated what I wanted. SO now I will move to the MDP.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

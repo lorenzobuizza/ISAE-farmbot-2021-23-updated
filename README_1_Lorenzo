@@ -1,0 +1,46 @@
+
+10/01/23
+CARE!!
+In the report I will add a comparison between FF and Metric FF 2.0, since Metric FF said that there was no metric to minimize and Metric FF 2.1 could not even parse (Erreur de segmentation (core dumped)
+). I used same identical PDDL domain file (of course for classical FF I removed the costs, but the actions and the types were absolutely identical in order to keep consistency between the results). For both FF and Metric FF I have to look at the results on the files called plan3.txt, using the PDDL domain_v3 and problem_v3. Moreover, to verify that the result of the Metric FF was not depending on the values chosen for the different costs, I tried to select various values but the output was always the same. 
+
+UPDATE! In Metric FF 2.0, I produced the version v4 of the domain, problem and plan.txt files. In this version I decided to put as 0 the cost for moving to the different waypoints, while keeping a certain value as a cost for the actions. The result, surprisingly, is the same identical as FF planner with v3! So maybe the error is somewhere in the distances between the points?
+
+UPDATE! Instead of increasing the cost of the action "move" using the actual distance betweeen the two waypoints taken in consideration, I tried firstly with a fixed value (1,10,100,1000,10000). Using a fixed value, I obtain again the same result as classical FF v3, of course! Because using fixed values for the cost of each action is equivalent as not using any value at all, since the goal is to effectuate all the tasks in all the points! So of course the system is forced to execute everything! nothing is minimized because every cost is constant. The order which is used by the planner to choose which waypoints to go first is the same as classical FF, which is probably alphabetical or topological order. Now I will try to introduce the variable costs based on variable distances, but instead of using 33 points I will use only 6 of them! probably the first two rows, A and B. This will be the version v5 of Metric FF 2.0. I should also take a look at v3 of Metric FF 2.0, cause maybe I wrote something wrong for the distances...
+
+17:29
+now I wrote the v5 of domain and problem to use with the Metric FF 2.0 in which i've only put waypoints a/b 0,1,2 and z0,1,6. I will run it using variable cost for move, and fixed costs for the other actions.
+
+17:32
+I can already see that it is wrong! results can be seen in plan5.txt. Now I will try to run v5 using fixed cost for move action (i.e., I will produce version v6 and run it).
+
+17:36
+I obtained plan6.txt and it's exactly what i was expecting! the correct one, cause I used fixed cost for move action and 0 for everything else (which means im not minimizing anything at all, it's exactly like using classic FF). Now i will try with only 1 waypoint, to demonstrate that Metric FF 2.0 is wrong!
+
+17:48
+I used only waypoint b2 in v7, with variable cost for move action. and in fact it's not working! So i should be looking for another solver, maybe instad of Metric FF I can use FD (Fast Downward)?
+
+
+11/01/23
+10:59
+I will try to modify the domain file and the problem files to ocnsider the :action-cost, because maybe that's the error! I will try firstly with Metric FF again, and if it does not work I will try Fast Downward. So i take the v3 and I produce the v8
+
+11:25
+I specified the new PDDL files of v8 for Metric FF. I also added the section :requirements in the domain file. However, should I also put the relative distances between z0, z1 and z6? But firstly I will try to run it.
+
+11:35
+I get the error:
+domain_v8.pddl: syntax error in line 40, ':ACTION-COSTS':
+domain definition expected
+
+11:48
+It appears that it's not working with the :action-costs and i dont know why. So I will stop with version v8 and ill go back to version v3, and I will try to introduce the distances between the z locations! I will produce the version v9. I added in the python parser some lines to compute the relative distances between the z points, and Now I will add them in v9, but careful cause z2 must be substituted by z6 and also a lot of them are repeated! Now I will try to run v9 using Metric FF 2.0 using variable distances for the move action cost and everything else fixed.
+
+12:21
+It worked! meaning that I was able to re-obtain the result that I obtained before with classical FF, but this means that the plan is not optimized cause it's following alphabetical order instead of minimizing the distances between the point. does it mean that there's again a mistake in the distances? I have 33 wp, which means 33*33 combinations = 1089 distances. How many do I have? 1089, okay so that's perfect. Maybe it depends on the fact that the distances are not coherent between each other? cause I have 1089 distances all related to each other! In fact, ChatGPT said: "It's fundamental to notice that the distance function should be consistent and comply with the triangle inequality, otherwise the planner could find unsolvable problems or not find optimal plans". So, I guess this is the reason! There are too many locations in the problem, so I guess that v9 is the most correct version but now I will try to implement the MDP!
+
+
+
+
+
+

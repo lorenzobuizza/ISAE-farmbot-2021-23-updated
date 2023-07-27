@@ -1,0 +1,134 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](TOTAL-COST)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:   40 into depth [1][2][3][4]
+                                  39            [1][2]
+                                  38            [1][2]
+                                  37            [1][2]
+                                  36            [1][2]
+                                  35            [1][2]
+                                  34            [1][2]
+                                  33            [1][2]
+                                  32            [1][2]
+                                  31            [1][2][3][4][5][6]
+                                  30            [1][2]
+                                  29            [1][2]
+                                  28            [1][2]
+                                  27            [1][2]
+                                  26            [1][2]
+                                  25            [1][2]
+                                  24            [1][2]
+                                  23            [1][2]
+                                  22            [1][2]
+                                  21            [1]
+                                  20            [1][2][3]
+                                  19            [1]
+                                  18            [1]
+                                  17            [1]
+                                  16            [1]
+                                  15            [1]
+                                  14            [1]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 Z0
+        1: MOUNTSOILSENSOR FARMBOT
+        2: MOVE FARMBOT Z0 C2
+        3: TAKEDATABEFORE FARMBOT C2
+        4: MOVE FARMBOT C2 C1
+        5: TAKEDATABEFORE FARMBOT C1
+        6: MOVE FARMBOT C1 C0
+        7: TAKEDATABEFORE FARMBOT C0
+        8: MOVE FARMBOT C0 B2
+        9: TAKEDATABEFORE FARMBOT B2
+       10: MOVE FARMBOT B2 B1
+       11: TAKEDATABEFORE FARMBOT B1
+       12: MOVE FARMBOT B1 B0
+       13: TAKEDATABEFORE FARMBOT B0
+       14: MOVE FARMBOT B0 A2
+       15: TAKEDATABEFORE FARMBOT A2
+       16: MOVE FARMBOT A2 A1
+       17: TAKEDATABEFORE FARMBOT A1
+       18: MOVE FARMBOT A1 A0
+       19: TAKEDATABEFORE FARMBOT A0
+       20: MOVE FARMBOT A0 Z0
+       21: DISMOUNTSOILSENSOR FARMBOT
+       22: MOVE FARMBOT Z0 Z1
+       23: MOUNTWATERNOZZLE FARMBOT
+       24: MOVE FARMBOT Z1 C2
+       25: WATERSOIL FARMBOT C2
+       26: MOVE FARMBOT C2 C1
+       27: WATERSOIL FARMBOT C1
+       28: MOVE FARMBOT C1 C0
+       29: WATERSOIL FARMBOT C0
+       30: MOVE FARMBOT C0 B2
+       31: WATERSOIL FARMBOT B2
+       32: MOVE FARMBOT B2 B1
+       33: WATERSOIL FARMBOT B1
+       34: MOVE FARMBOT B1 B0
+       35: WATERSOIL FARMBOT B0
+       36: MOVE FARMBOT B0 A2
+       37: WATERSOIL FARMBOT A2
+       38: MOVE FARMBOT A2 A1
+       39: WATERSOIL FARMBOT A1
+       40: MOVE FARMBOT A1 A0
+       41: WATERSOIL FARMBOT A0
+       42: MOVE FARMBOT A0 Z1
+       43: DISMOUNTWATERNOZZLE FARMBOT
+       44: MOVE FARMBOT Z1 Z0
+       45: MOUNTSOILSENSOR FARMBOT
+       46: MOVE FARMBOT Z0 C2
+       47: TAKEDATAAFTER FARMBOT C2
+       48: MOVE FARMBOT C2 C1
+       49: TAKEDATAAFTER FARMBOT C1
+       50: MOVE FARMBOT C1 C0
+       51: TAKEDATAAFTER FARMBOT C0
+       52: MOVE FARMBOT C0 B2
+       53: TAKEDATAAFTER FARMBOT B2
+       54: MOVE FARMBOT B2 B1
+       55: TAKEDATAAFTER FARMBOT B1
+       56: MOVE FARMBOT B1 B0
+       57: TAKEDATAAFTER FARMBOT B0
+       58: MOVE FARMBOT B0 A2
+       59: TAKEDATAAFTER FARMBOT A2
+       60: MOVE FARMBOT A2 A1
+       61: TAKEDATAAFTER FARMBOT A1
+       62: MOVE FARMBOT A1 A0
+       63: TAKEDATAAFTER FARMBOT A0
+       64: MOVE FARMBOT A0 Z0
+       65: DISMOUNTSOILSENSOR FARMBOT
+       66: MOVE FARMBOT Z0 Z6
+plan cost: 44493.000000
+
+time spent:    0.00 seconds instantiating 175 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 42 facts and 175 actions
+               0.00 seconds creating final representation with 42 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 372 states, to a max depth of 6
+               0.00 seconds total time
+

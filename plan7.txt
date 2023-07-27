@@ -1,0 +1,58 @@
+
+ff: parsing domain file
+domain 'FARMBOT' defined
+ ... done.
+ff: parsing problem file
+problem 'MOTIONANDPICTURE' defined
+ ... done.
+
+
+
+ff: search configuration is Enforced Hill-Climbing, then A*epsilon with weight 5.
+Metric is ((1.00*[RF0](ENERGYCONS)) - () + 0.00)
+COST MINIMIZATION DONE (WITH cost-minimizing relaxed plans).
+
+Cueing down from goal distance:    8 into depth [1][2][3][4][5]
+                                   7            [1][2][3][4][5][6][7]
+                                   6            [1][2]
+                                   5            [1]
+                                   4            [1][2][3][4]
+                                   3            [1][2]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+step    0: MOVE FARMBOT Z6 B2
+        1: MOVE FARMBOT B2 Z0
+        2: MOUNT FARMBOT SOILSENSOR Z0
+        3: MOVE FARMBOT Z0 B2
+        4: PERFORM FARMBOT SOILSENSOR B2 TAKEDATABEFORE IRRIGATE
+        5: MOVE FARMBOT B2 Z0
+        6: DISMOUNT FARMBOT SOILSENSOR Z0
+        7: MOVE FARMBOT Z0 B2
+        8: MOVE FARMBOT B2 Z1
+        9: MOUNT FARMBOT WATERINGNOZZLE Z1
+       10: MOVE FARMBOT Z1 B2
+       11: PERFORM FARMBOT WATERINGNOZZLE B2 IRRIGATE TAKEDATABEFORE
+       12: MOVE FARMBOT B2 Z1
+       13: DISMOUNT FARMBOT WATERINGNOZZLE Z1
+       14: MOVE FARMBOT Z1 B2
+       15: MOVE FARMBOT B2 Z0
+       16: MOUNT FARMBOT SOILSENSOR Z0
+       17: MOVE FARMBOT Z0 B2
+       18: PERFORM FARMBOT SOILSENSOR B2 TAKEDATAAFTER IRRIGATE
+       19: MOVE FARMBOT B2 Z0
+       20: DISMOUNT FARMBOT SOILSENSOR Z0
+       21: MOVE FARMBOT Z0 B2
+       22: MOVE FARMBOT B2 Z6
+plan cost: 28052.000000
+
+time spent:    0.00 seconds instantiating 40 easy, 5 hard action templates
+               0.00 seconds reachability analysis, yielding 12 facts and 16 actions
+               0.00 seconds creating final representation with 12 relevant facts, 1 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 38 states, to a max depth of 7
+               0.00 seconds total time
+
